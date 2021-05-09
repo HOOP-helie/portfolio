@@ -2,8 +2,9 @@
 font-family: 'Playfair Display', serif; */
 :root {
   --dark: rgb(36, 36, 36);
-  --primary-blue:#0bceff;
-  --primary-blue-soft:rgba(11, 206, 255, 0.5);
+  --primary-blue: #0bceff;
+  --primary-blue-soft: rgba(11, 206, 255, 0.5);
+  --secondary-purple : rgb(138, 118, 189);
 }
 body {
   font-family: "Libre Franklin", sans-serif;
@@ -67,7 +68,7 @@ header {
 }
 
 /* SVG CIRCLE SCROLL */
-/* ================== */
+/* ============================= */
 #circle-container {
   bottom: 20%;
   position: absolute;
@@ -118,7 +119,9 @@ header {
   transform: translateX(-50%);
 }
 
-
+/* ==================================== */
+/* ==========  MAIN SECTION============ */
+/* ==================================== */
 main {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
@@ -127,14 +130,12 @@ main {
   margin-bottom: 350px;
   margin-top: 100vh;
   padding: 5rem 0;
-
 }
 
-
-#defile{
+#defile {
   overflow-x: hidden;
 }
-#text-defile{
+#text-defile {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 3px;
@@ -148,16 +149,16 @@ main {
   padding-left: 100%;
   white-space: nowrap;
   animation-delay: -5;
-  animation: defile-1 20s infinite linear;
+  animation: defile-1 40s infinite linear;
   margin-bottom: 8rem;
 }
 
 @keyframes defile-1 {
   0% {
-    transform: translate3d(-20%,0,0);  /* position initiale à gauche */
+    transform: translate3d(-20%, 0, 0); /* position initiale à gauche */
   }
   100% {
-    transform: translate3d(-100%,0,0);      /* position finale à droite */
+    transform: translate3d(-100%, 0, 0); /* position finale à droite */
   }
 }
 
@@ -259,7 +260,6 @@ main {
   letter-spacing: 1px;
   padding: 0.5rem 1rem;
   position: relative;
-  /* white-space: nowrap; */
 }
 
 .see-project-btn::after {
@@ -318,10 +318,9 @@ main {
   font-size: 1.2rem;
 }
 
-.see-project-btn:hover .fa-arrow-down{
-  color:#fff
+.see-project-btn:hover .fa-arrow-down {
+  color: #fff;
 }
-
 
 /*========================================= */
 /* Section- COURSE / FORMATION============= */
@@ -331,7 +330,7 @@ main {
   text-align: center;
 }
 .course-section .current-course p:first-child {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.4;
@@ -340,15 +339,113 @@ main {
 .course-section .current-course p:nth-child(2) {
   font-size: 1.3rem;
   font-weight: 700;
+  color:rgba(255, 255, 255, 0.664)
 }
 
 .course-section .dates {
   margin: 1rem auto 3rem;
   text-align: center;
-  font-size: 4rem;
-  color: #0bceff73;;
+  font-size: 3rem;
+  color: #0bceffa8;
   font-family: "Playfair Display", serif;
 }
+
+.course-subject {
+  border: 1px solid rgba(255, 255, 255, 0.438);
+  padding: 2rem 1rem 3rem;
+}
+
+[class^="subject-title"] {
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+[class^="subject-title"] .number {
+  font-size: 4rem;
+  color: var(--secondary-purple);
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  left: 10px;
+  z-index: -1;
+}
+
+
+/* FRONT END SUBJECT */
+/* ========================== */
+.front-subject .adobe-logo {
+  margin: 1rem auto 2rem;
+}
+.front-subject .adobe-logo span {
+  display: inline-block;
+  color: var(--secondary-purple);
+  border: 2px solid var(--secondary-purple);
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 0 8px;
+}
+.front-subject .row2 {
+  margin: 1rem auto 2rem
+}
+
+.front-subject .row2 p, 
+.front-subject .row3 p{
+  margin-bottom: 1rem;
+}
+.front-subject .row2 .fab, .front-subject .row3 .fab{
+  font-size: 1.8rem;
+  display: inline-block;
+  color: var(--secondary-purple);
+  margin: 0 8px
+}
+
+
+
+/* BACK END SUBJECT */
+/* ========================== */
+
+.back-subject .subject-content p:first-child{
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+.back-end-logo{
+  width: 6rem;
+  margin: 1rem auto;
+}
+
+.back-end-logo img{
+  width: 100%;
+}
+
+/* OTHER SUBJECT */
+/* ========================== */
+.other-subject{
+  line-height: 1.5;
+}
+
+.other-subject .subject-content p {
+  margin: 1rem auto 0.8rem; 
+}
+
+.other-subject .subject-content p:first-child {
+  margin-bottom: 2rem;
+}
+
+.other-subject .subject-content p:nth-child(2) {
+  margin-bottom: 2rem;
+}
+.other-subject .subject-content .fab{
+  font-size: 1.8rem;
+  display: inline-block;
+  color: var(--secondary-purple);
+  margin: 0 8px
+}
+
+.empty-subject{display: none;}
+
 footer {
   position: fixed;
   display: none;
