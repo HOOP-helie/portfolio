@@ -127,10 +127,13 @@ main {
   margin-bottom: 350px;
   margin-top: 100vh;
   padding: 5rem 0;
+
 }
 
 
-
+#defile{
+  overflow-x: hidden;
+}
 #text-defile{
   font-size: 3rem;
   font-weight: 600;

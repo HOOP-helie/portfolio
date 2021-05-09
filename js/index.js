@@ -54,8 +54,7 @@ var options = {
   wrapperDamper: 0.07,
   cancelOnTouch: true,
 };
-
-butter.init(options);
+butter.init(options)
 
 
 // Open the burger menu
@@ -119,3 +118,16 @@ window.addEventListener("scroll", () => {
     document.querySelectorAll(".scroll-opacity").forEach((el)=> 
         el.style.setProperty("opacity", opacity))
 });
+
+
+// let doit;
+// let butterInit = () => {
+//   if(window.innerWidth>1000)butter.init(options);
+
+// }
+// window.addEventListener("resize", () => {
+//   clearTimeout(doit);
+
+//   doit=setTimeout(()=>console.log(window.innerWidth),1000)
+// })
+
