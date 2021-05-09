@@ -1,0 +1,138 @@
+.navigation{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  top:0
+}
+/* ===================================== */
+/* ===========Burger menu================ */
+/* ===================================== */
+.menu-background,
+.burger-icon {
+  border-radius: 50%;
+  position: fixed;
+  right: 3%;
+  top: 4%;
+  z-index: 2000;
+}
+
+.menu-background {
+  background-color: var(--dark);
+  width: 60px;
+  height: 60px;
+  transition: transform 0.5s ease-in-out;
+  transform: translate(3px, -2px);
+}
+
+.menu-background-open {
+  transform: scale(100);
+}
+.burger-icon {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px 10px;
+  box-shadow: 0 0 0 0 rgba(65, 166, 233, 0.7);
+}
+
+.burger-icon:hover {
+  transform: scale(1.1);
+}
+.pulse:hover {
+  animation: pulse 0.6s;
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 20px rgba(57, 50, 58, 0);
+  }
+}
+
+.burger-icon-rotate {
+  transform: rotate(90deg);
+}
+
+[class^="burger-item"] {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 3px;
+  transition: 0.2s;
+}
+
+.burger-item1 {
+  width: 33px;
+}
+.burger-item2 {
+  width: 20px;
+}
+.burger-item3 {
+  width: 29px;
+}
+
+.burger-item1-anim {
+  transform: translateY(13px) rotate(44deg);
+}
+.burger-item3-anim {
+  width: 33px;
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.navigation {
+font-family: 'Playfair Display', serif; 
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 20%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 2000;
+}
+
+.navigation-list {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.navigation-item {
+  margin-bottom: 3rem;
+  transition: 0.2s;
+}
+
+.navigation-item:hover {
+  transform: scale(1.05);
+}
+
+.nav-item-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: 0.2s;
+}
+
+.nav-item-letter-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.visible-nav {
+  visibility: visible;
+  opacity: 1;
+}
+
+.opacity-hidden {
+  opacity: 0;
+}

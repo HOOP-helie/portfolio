@@ -1,0 +1,356 @@
+/* font-family: 'Libre Franklin', sans-serif;
+font-family: 'Playfair Display', serif; */
+:root {
+  --dark: rgb(36, 36, 36);
+  --primary-blue:#0bceff;
+  --primary-blue-soft:rgba(11, 206, 255, 0.5);
+}
+body {
+  font-family: "Libre Franklin", sans-serif;
+  position: relative;
+}
+
+/* ===================================== */
+/* ============= HEADER ================ */
+/* ===================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.content--canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+}
+
+.header-details {
+  color: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  top: 1rem;
+  left: 10%;
+  top: 8%;
+  font-size: 3.5vw;
+  z-index: 100;
+}
+
+.header-title {
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  line-height: 1.2;
+  font-size: 5rem;
+  font-size: clamp(2rem, 20vw, 7rem);
+  z-index: 100;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.header-content p {
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  z-index: 100;
+  font-size: 2rem;
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: 500;
+}
+
+/* SVG CIRCLE SCROLL */
+/* ================== */
+#circle-container {
+  bottom: 20%;
+  position: absolute;
+  z-index: 100;
+  width: 180px;
+  height: 60px;
+}
+
+#circle {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+#circle text {
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  animation: rotate 10s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+#circle svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200px;
+}
+
+#circle .fa-arrow-down {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translateX(-50%);
+}
+
+
+main {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  position: relative;
+  margin-bottom: 350px;
+  margin-top: 100vh;
+  padding: 5rem 0;
+}
+
+
+
+#text-defile{
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: transparent;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: rgba(11, 206, 255, 0.25);
+  stroke-width: 0.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-right: 2em;
+  padding-left: 100%;
+  white-space: nowrap;
+  animation-delay: -5;
+  animation: defile-1 20s infinite linear;
+  margin-bottom: 8rem;
+}
+
+@keyframes defile-1 {
+  0% {
+    transform: translate3d(-20%,0,0);  /* position initiale à gauche */
+  }
+  100% {
+    transform: translate3d(-100%,0,0);      /* position finale à droite */
+  }
+}
+
+/* ==================================== */
+/* =========ABOUT SECTION ============= */
+/* ==================================== */
+#about {
+  width: 90%;
+  margin: auto;
+}
+.about-section1-img {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-section1-img img {
+  width: 90%;
+}
+
+.about-section1-content p {
+  line-height: 1.5;
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+.about-section1-content .goal {
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+.cv-btn {
+  background: none;
+  display: block;
+  width: 75%;
+  max-width: 350px;
+  text-align: center;
+  margin: 8rem auto 3rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.cv-btn a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 1em 2em;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.cv-btn .rect-border {
+  position: absolute;
+  border: 2px solid #fff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: 0.3s;
+}
+
+.rect-border:first-child {
+  transform: translate(-2%, -8%);
+}
+.rect-border:nth-child(2) {
+  transform: translate(3%, 6%);
+}
+
+.cv-btn:hover .rect-border {
+  transform: translate(0%, 0%);
+}
+.cv-btn:hover a {
+  background-color: #405fc3;
+}
+
+.about-section2 {
+  margin-top: 8rem;
+  position: relative;
+}
+
+.frontend-passion {
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.see-project-btn {
+  cursor: pointer;
+  margin: 2rem 0 0 1rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  /* white-space: nowrap; */
+}
+
+.see-project-btn::after {
+  content: "";
+  height: 100%;
+  width: 40px;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  background-color: #0bceff9f;
+  border-radius: 30px;
+  animation: slideLeft 0.7s forwards;
+}
+
+.see-project-btn:hover::after {
+  animation: slideRight 0.7s forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    width: 40px;
+  }
+  55% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 40px;
+    left: 80%;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    width: 40px;
+    right: 0;
+    left: 80%;
+  }
+
+  55% {
+    width: 100%;
+    right: 80%;
+    left: 0;
+  }
+  100% {
+    width: 40px;
+    left: 0;
+  }
+}
+
+.see-project-btn .fa-arrow-down {
+  color: var(--primary-blue);
+  padding-left: 10px;
+  transition: 0.5s 0.2s;
+  font-size: 1.2rem;
+}
+
+.see-project-btn:hover .fa-arrow-down{
+  color:#fff
+}
+
+
+/*========================================= */
+/* Section- COURSE / FORMATION============= */
+/*========================================= */
+.course-section {
+  margin-top: 10rem;
+  text-align: center;
+}
+.course-section .current-course p:first-child {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.course-section .current-course p:nth-child(2) {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.course-section .dates {
+  margin: 1rem auto 3rem;
+  text-align: center;
+  font-size: 4rem;
+  color: #0bceff73;;
+  font-family: "Playfair Display", serif;
+}
+footer {
+  position: fixed;
+  display: none;
+  height: 350px;
+  bottom: 0;
+  width: 100%;
+  z-index: 600;
+}
