@@ -5,6 +5,7 @@ font-family: 'Playfair Display', serif; */
   --primary-blue: #0bceff;
   --primary-blue-soft: rgba(11, 206, 255, 0.5);
   --secondary-purple : rgb(138, 118, 189);
+  --secondary-purple-soft : rgba(138, 118, 189,0.6);
 }
 body {
   font-family: "Libre Franklin", sans-serif;

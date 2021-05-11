@@ -139,10 +139,25 @@ font-family: 'Playfair Display', serif;
 .swiper-container {
   /* width: 90%; */
   max-width: 1200px;
-  height:auto
+  height:25rem;
+  padding-bottom: 3rem;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--secondary-purple);
+  opacity: .3;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.swiper-button-next, .swiper-button-prev{
+color: var(--secondary-purple-soft);
 }
 .swiper-slide{
   text-align: center;
+  height: 100%;
+  border:1px solid var(--secondary-purple-soft);
 }
 
 .swiper-slide img{
