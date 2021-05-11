@@ -132,3 +132,38 @@ font-family: 'Playfair Display', serif;
 .opacity-hidden {
   opacity: 0;
 }
+
+
+/* SLIDER SWIPER =================== */
+/* ====================================== */
+.swiper-container {
+  /* width: 90%; */
+  max-width: 1200px;
+  height:auto
+}
+.swiper-slide{
+  text-align: center;
+}
+
+.swiper-slide img{
+  border-radius: 10px;
+  width: 75%;
+  max-width: 400px;
+  object-fit: cover;
+  margin: 1rem auto 2rem;
+}
+.swiper-slide .challenge-description{
+  width: 70%;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.swiper-slide .challenge-links{
+  width: 30%;
+  max-width: 120px;
+  margin: auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}

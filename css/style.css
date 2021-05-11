@@ -149,7 +149,7 @@ main {
   padding-left: 100%;
   white-space: nowrap;
   animation-delay: -5;
-  animation: defile-1 40s infinite linear;
+  animation: defile-1 30s infinite alternate linear;
   margin-bottom: 8rem;
 }
 
@@ -158,7 +158,7 @@ main {
     transform: translate3d(-20%, 0, 0); /* position initiale à gauche */
   }
   100% {
-    transform: translate3d(-100%, 0, 0); /* position finale à droite */
+    transform: translate3d(-50%, 0, 0); /* position finale à droite */
   }
 }
 
@@ -445,6 +445,22 @@ main {
 }
 
 .empty-subject{display: none;}
+
+
+/*========================================= */
+/* Section- REALISATIONS / PROJETS========== */
+/*========================================= */
+.projects{
+  margin: 5rem auto;
+}
+.projects h3 {
+  font-size: 3.2rem;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+
 
 footer {
   position: fixed;
