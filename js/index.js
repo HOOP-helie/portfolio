@@ -51,7 +51,7 @@ const main = document.querySelector('main')
 // Momentum scroll with Butter JS
 var options = {
   wrapperId: 'butter',
-  wrapperDamper: 0.06,
+  wrapperDamper: 0.05,
   cancelOnTouch: true,
 };
 butter.init(options)
