@@ -6,12 +6,17 @@ font-family: 'Playfair Display', serif; */
   --primary-blue-soft: rgba(11, 206, 255, 0.5);
   --secondary-purple: rgb(138, 118, 189);
   --secondary-purple-soft: rgba(138, 118, 189, 0.6);
+  scroll-behavior: smooth;
 }
+
 body {
   font-family: "Libre Franklin", sans-serif;
   position: relative;
 }
 
+.no-display{
+  display: none;
+}
 /* ===================================== */
 /* ============= HEADER ================ */
 /* ===================================== */
@@ -123,10 +128,14 @@ header {
 /* ==================================== */
 /* ==========  MAIN SECTION============ */
 /* ==================================== */
+#butter{
+  margin-bottom: 350px;
+
+}
 main {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
+z-index: 5;
   position: relative;
   margin-bottom: 350px;
   margin-top: 100vh;
@@ -462,7 +471,7 @@ main {
 
 .project1-img {
   position: relative;
-  margin: 3rem auto  2rem;
+  margin: 3rem auto 2rem;
   width: 90%;
   max-width: 25rem;
 }
@@ -494,42 +503,76 @@ main {
   line-height: 1.5;
 }
 
-.project1-content .project-title{
-font-size: 1.2rem;
-font-weight: 800;
-margin-bottom: 1rem;
+.project1-content .project-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
-.project1-content .project-languages{
+.project1-content .project-languages {
   font-weight: 500;
   font-style: italic;
   margin-bottom: 10px;
-  }
-  
-  .project1-content .original-website{
-    margin-top: 1rem;
-    font-weight: 600;
-  }
+}
 
-  .project1-content .original-website a{
-color: var(--secondary-purple);
-  }
+.project1-content .original-website {
+  margin-top: 1rem;
+  font-weight: 600;
+}
 
-  .project1-links{
-    margin-top: 1rem;
-font-size: 1.5rem;
-text-align: center;
-  }
+.project1-content .original-website a {
+  color: var(--secondary-purple);
+}
 
-  
-  .project1-links a + a{
-margin-left: 3rem;
-      }
+.project1-links {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.project1-links a + a {
+  margin-left: 3rem;
+}
+
 footer {
+  padding: 3rem 2rem;
+  color: #fff;
   position: fixed;
-  display: none;
   height: 350px;
   bottom: 0;
   width: 100%;
-  z-index: 600;
+  /* visibility: hidden; */
+transition:0.3s;
+z-index: 0;
+opacity: 0;
+}
+
+
+
+.back-to-top{
+  color: #fff;
+  padding:12px;
+  background-color: transparent;
+  border-radius: 50%;
+border : 3px solid #fff
+}
+
+.footer-header p {
+  margin :2rem auto 3rem;
+  font-size:1.8rem
+}
+
+.footer-links{font-weight: 600;
+}
+
+.footer-links div{
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-links div i{
+  /* font-size: 1.3rem; */
+margin-right: 10px;
 }

@@ -256,11 +256,11 @@ font-weight: 800;
   cursor: pointer;
 }
 
-.swiper-slide .challenge-links i{
-  transition:0.3s
+.swiper-slide .challenge-links i,  .project1-links i {
+  transition:0.2s
 }
 
-.swiper-slide .challenge-links i:hover {
+.swiper-slide .challenge-links i:hover,  .project1-links i:hover {
   color:var(--primary-blue);
   transform:scale(1.2)
 }

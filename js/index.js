@@ -6,13 +6,11 @@ const burger_item3 = document.querySelector(".burger-item3");
 const menu_background = document.querySelector(".menu-background");
 const nav = document.querySelector(".navigation");
 const nav_items = document.querySelectorAll(".navigation-item");
-const smiley = document.querySelector(".smiley-face");
 const cv_btn = document.querySelector(".cv-btn");
 const nav_letters_container = document.querySelectorAll(
   ".nav-link .letters-container"
 );
 // const all_sections = document.querySelectorAll(".to-reveal");
-
 
 // all_sections.forEach(function (section) {
 //   sectionObserver.observe(section);
@@ -25,13 +23,11 @@ nav_letters_container.forEach((container) => {
   );
 });
 const nav_link_letters = document.querySelectorAll(".nav-item-letter");
-const name_heading = document.querySelector('.name');
-const goal_heading = document.querySelector('.goal');
-const svg_heading = document.querySelector('.svg-circle');
-const welcome_heading = document.querySelector('.welcome-msg');
-const main = document.querySelector('main')
-
-
+const name_heading = document.querySelector(".name");
+const goal_heading = document.querySelector(".goal");
+const svg_heading = document.querySelector(".svg-circle");
+const welcome_heading = document.querySelector(".welcome-msg");
+const main = document.querySelector("main");
 
 // Reveal Elements on Scroll
 // const revealSectionImg = function (entries, observer) {
@@ -47,15 +43,13 @@ const main = document.querySelector('main')
 //   threshold: 1,
 // });
 
-
 // Momentum scroll with Butter JS
 var options = {
-  wrapperId: 'butter',
+  wrapperId: "butter",
   wrapperDamper: 0.05,
   cancelOnTouch: true,
 };
-butter.init(options)
-
+// butter.init(options);
 
 // Open the burger menu
 let menuIsOpen = false;
@@ -83,11 +77,13 @@ burger_icon.addEventListener("click", () => {
       t += 280;
     });
   } else {
-    nav_link_letters.forEach((letter)=> letter.classList.toggle("nav-item-letter-visible"))
+    nav_link_letters.forEach((letter) =>
+      letter.classList.toggle("nav-item-letter-visible")
+    );
   }
 });
 
-// Follow cursor 
+// Follow cursor
 // document.addEventListener("mousemove", function (e) {
 //     circle_cursor.style.left = `${e.pageX}px`;
 //   circle_cursor.style.top = `${e.pageY}px`;
@@ -105,29 +101,35 @@ burger_icon.addEventListener("click", () => {
 //   })
 // }
 
-
 // Header content disappearing on scroll
 const checkpoint = 800;
+const checkpointFooter = 4700;
+let opacityHeader = 1;
+let opacityFooter = 0;
+const header = document.querySelector(".header-content");
+const footer = document.querySelector("footer");
+
 window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
+  const currentScroll = window.pageYOffset;
   if (currentScroll < checkpoint) {
-      opacity = 1 - currentScroll/700;
+    opacityHeader = 1 - currentScroll / 700;
   } else {
-    opacity = 0;
+    opacityHeader = 0;
   }
-    document.querySelectorAll(".scroll-opacity").forEach((el)=> 
-        el.style.setProperty("opacity", opacity))
+  document
+    .querySelectorAll(".scroll-opacity")
+    .forEach((el) => el.style.setProperty("opacity", opacityHeader));
+  opacityHeader === 0 ? header.classList.add("no-display") : header.classList.remove("no-display");
+
+  if (currentScroll > checkpointFooter) {
+    opacityFooter = currentScroll /5000;
+    footer.classList.remove("no-display");
+    console.log(opacityFooter);
+  } else {
+    opacityFooter = 0;
+  footer.classList.add("no-display")
+  }
+  footer.style.setProperty("opacity", opacityFooter);
 });
 
-
-// let doit;
-// let butterInit = () => {
-//   if(window.innerWidth>1000)butter.init(options);
-
-// }
-// window.addEventListener("resize", () => {
-//   clearTimeout(doit);
-
-//   doit=setTimeout(()=>console.log(window.innerWidth),1000)
-// })
 
