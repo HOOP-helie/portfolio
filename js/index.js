@@ -46,10 +46,10 @@ const main = document.querySelector("main");
 // Momentum scroll with Butter JS
 var options = {
   wrapperId: "butter",
-  wrapperDamper: 0.05,
+  wrapperDamper: 0.09,
   cancelOnTouch: true,
 };
-// butter.init(options);
+butter.init(options);
 
 // Open the burger menu
 let menuIsOpen = false;
@@ -103,7 +103,7 @@ burger_icon.addEventListener("click", () => {
 
 // Header content disappearing on scroll
 const checkpoint = 800;
-const checkpointFooter = 4700;
+const checkpointFooter = 4850;
 let opacityHeader = 1;
 let opacityFooter = 0;
 const header = document.querySelector(".header-content");
@@ -122,13 +122,14 @@ window.addEventListener("scroll", () => {
   opacityHeader === 0 ? header.classList.add("no-display") : header.classList.remove("no-display");
 
   if (currentScroll > checkpointFooter) {
-    opacityFooter = currentScroll /5000;
+    opacityFooter =  currentScroll ;
     footer.classList.remove("no-display");
     console.log(opacityFooter);
-  } else {
+  } else
+  {
     opacityFooter = 0;
-  footer.classList.add("no-display")
   }
+  currentScroll<4500?   footer.classList.add("no-display"):   footer.classList.remove("no-display");
   footer.style.setProperty("opacity", opacityFooter);
 });
 

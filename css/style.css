@@ -542,7 +542,7 @@ footer {
   bottom: 0;
   width: 100%;
   /* visibility: hidden; */
-transition:0.3s;
+transition:0.5s;
 z-index: 0;
 opacity: 0;
 }

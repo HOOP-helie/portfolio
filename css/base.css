@@ -81,17 +81,9 @@
 	}
 }
 
-a {
-	text-decoration: none;
-	color: var(--color-link);
-	outline: none;
-}
 
-a:hover,
-a:focus {
-	color: var(--color-link-hover);
-	outline: none;
-}
+
+
 
 .frame {
 	padding: 3rem 5vw;
