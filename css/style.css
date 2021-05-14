@@ -4,8 +4,8 @@ font-family: 'Playfair Display', serif; */
   --dark: rgb(36, 36, 36);
   --primary-blue: #0bceff;
   --primary-blue-soft: rgba(11, 206, 255, 0.5);
-  --secondary-purple : rgb(138, 118, 189);
-  --secondary-purple-soft : rgba(138, 118, 189,0.6);
+  --secondary-purple: rgb(138, 118, 189);
+  --secondary-purple-soft: rgba(138, 118, 189, 0.6);
 }
 body {
   font-family: "Libre Franklin", sans-serif;
@@ -340,7 +340,7 @@ main {
 .course-section .current-course p:nth-child(2) {
   font-size: 1.3rem;
   font-weight: 700;
-  color:rgba(255, 255, 255, 0.664)
+  color: rgba(255, 255, 255, 0.664);
 }
 
 .course-section .dates {
@@ -373,7 +373,6 @@ main {
   z-index: -1;
 }
 
-
 /* FRONT END SUBJECT */
 /* ========================== */
 .front-subject .adobe-logo {
@@ -389,46 +388,45 @@ main {
   margin: 0 8px;
 }
 .front-subject .row2 {
-  margin: 1rem auto 2rem
+  margin: 1rem auto 2rem;
 }
 
-.front-subject .row2 p, 
-.front-subject .row3 p{
+.front-subject .row2 p,
+.front-subject .row3 p {
   margin-bottom: 1rem;
 }
-.front-subject .row2 .fab, .front-subject .row3 .fab{
+.front-subject .row2 .fab,
+.front-subject .row3 .fab {
   font-size: 1.8rem;
   display: inline-block;
   color: var(--secondary-purple);
-  margin: 0 8px
+  margin: 0 8px;
 }
-
-
 
 /* BACK END SUBJECT */
 /* ========================== */
 
-.back-subject .subject-content p:first-child{
+.back-subject .subject-content p:first-child {
   margin-bottom: 3rem;
   line-height: 1.5;
 }
-.back-end-logo{
+.back-end-logo {
   width: 6rem;
   margin: 1rem auto;
 }
 
-.back-end-logo img{
+.back-end-logo img {
   width: 100%;
 }
 
 /* OTHER SUBJECT */
 /* ========================== */
-.other-subject{
+.other-subject {
   line-height: 1.5;
 }
 
 .other-subject .subject-content p {
-  margin: 1rem auto 0.8rem; 
+  margin: 1rem auto 0.8rem;
 }
 
 .other-subject .subject-content p:first-child {
@@ -438,20 +436,21 @@ main {
 .other-subject .subject-content p:nth-child(2) {
   margin-bottom: 2rem;
 }
-.other-subject .subject-content .fab{
+.other-subject .subject-content .fab {
   font-size: 1.8rem;
   display: inline-block;
   color: var(--secondary-purple);
-  margin: 0 8px
+  margin: 0 8px;
 }
 
-.empty-subject{display: none;}
-
+.empty-subject {
+  display: none;
+}
 
 /*========================================= */
 /* Section- REALISATIONS / PROJETS========== */
 /*========================================= */
-.projects{
+.projects {
   margin: 5rem auto;
 }
 .projects h3 {
@@ -461,8 +460,71 @@ main {
   margin-bottom: 5rem;
 }
 
+.project1-img {
+  position: relative;
+  margin: 3rem auto  2rem;
+  width: 90%;
+  max-width: 25rem;
+}
+.project1-img .big-img {
+  width: 15rem;
+  position: relative;
 
+  opacity: 0.9;
+}
+.project1-img .big-img img,
+.project1-img .small-img img {
+  width: 100%;
+  cursor: pointer;
+}
+.project1-img .small-img img {
+  border: 1px solid rgba(255, 255, 255, 0.527);
+}
+.project1-img .small-img {
+  position: absolute;
+  width: 11rem;
+  z-index: 3;
+  right: 0;
+  top: 40%;
+}
 
+.project1-content {
+  width: 90%;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.project1-content .project-title{
+font-size: 1.2rem;
+font-weight: 800;
+margin-bottom: 1rem;
+}
+
+.project1-content .project-languages{
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 10px;
+  }
+  
+  .project1-content .original-website{
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+
+  .project1-content .original-website a{
+color: var(--secondary-purple);
+  }
+
+  .project1-links{
+    margin-top: 1rem;
+font-size: 1.5rem;
+text-align: center;
+  }
+
+  
+  .project1-links a + a{
+margin-left: 3rem;
+      }
 footer {
   position: fixed;
   display: none;

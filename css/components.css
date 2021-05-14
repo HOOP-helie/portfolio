@@ -132,31 +132,49 @@
 
 /* SLIDER SWIPER =================== */
 /* ====================================== */
+.slider-title{
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.slider-title p:first-child{
+  font-size: 1.3rem;
+font-weight: 800;
+}
+
 .swiper-container {
   /* width: 90%; */
   max-width: 1200px;
   height: 27rem;
   padding: 0 2rem 3rem;
 }
+
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background: var(--secondary-purple);
   opacity: 0.3;
 }
+
 .swiper-pagination-bullet-active {
   opacity: 1;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--secondary-purple-soft);
 }
+
 .swiper-button-prev {
   left: 0;
 }
+
 .swiper-button-next {
   right: 0;
 }
+
 .swiper-slide {
   text-align: center;
   height: 100%;
@@ -180,7 +198,6 @@
 .swiper-slide .img-container img{
   width: 100%;
   transition: 0.2s;
-
 }
 
 
@@ -198,15 +215,18 @@
 	-webkit-transform: skewX(-25deg);
 	transform: skewX(-25deg);
 }
+
 .swiper-slide .img-container:hover::before {
 	-webkit-animation: shine .75s;
 	animation: shine .75s;
 }
+
 @-webkit-keyframes shine {
 	100% {
 		left: 125%;
 	}
 }
+
 @keyframes shine {
 	100% {
 		left: 125%;
@@ -239,17 +259,14 @@
 .swiper-slide .challenge-links i{
   transition:0.3s
 }
+
 .swiper-slide .challenge-links i:hover {
   color:var(--primary-blue);
   transform:scale(1.2)
 }
 
-
-
-
 @media (min-width:31rem){
   .swiper-container {
     height: 29rem;
-  
   }
 }
