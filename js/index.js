@@ -1,4 +1,3 @@
-const circle_cursor = document.querySelector(".circle-cursor");
 const burger_icon = document.querySelector(".burger-icon");
 const burger_item1 = document.querySelector(".burger-item1");
 const burger_item2 = document.querySelector(".burger-item2");
@@ -6,7 +5,7 @@ const burger_item3 = document.querySelector(".burger-item3");
 const menu_background = document.querySelector(".menu-background");
 const nav = document.querySelector(".navigation");
 const nav_items = document.querySelectorAll(".navigation-item");
-const cv_btn = document.querySelector(".cv-btn");
+
 const nav_letters_container = document.querySelectorAll(
   ".nav-link .letters-container"
 );
@@ -23,11 +22,7 @@ nav_letters_container.forEach((container) => {
   );
 });
 const nav_link_letters = document.querySelectorAll(".nav-item-letter");
-const name_heading = document.querySelector(".name");
-const goal_heading = document.querySelector(".goal");
-const svg_heading = document.querySelector(".svg-circle");
-const welcome_heading = document.querySelector(".welcome-msg");
-const main = document.querySelector("main");
+
 
 // Reveal Elements on Scroll
 // const revealSectionImg = function (entries, observer) {
@@ -52,10 +47,11 @@ var options = {
 // butter.init(options);
 
 // Open the burger menu
+//======================================
 let menuIsOpen = false;
-burger_icon.addEventListener("click", () => {
-  menuIsOpen = !menuIsOpen;
+const toggleMenu = () => {
   let t = 0;
+  menuIsOpen = !menuIsOpen;
   burger_item2.classList.toggle("opacity-hidden");
   burger_item1.classList.toggle("burger-item1-anim");
   burger_item3.classList.toggle("burger-item3-anim");
@@ -81,13 +77,15 @@ burger_icon.addEventListener("click", () => {
       letter.classList.toggle("nav-item-letter-visible")
     );
   }
+}
+  
+burger_icon.addEventListener("click", () => {
+  
+  toggleMenu();
+
 });
 
-// Follow cursor
-// document.addEventListener("mousemove", function (e) {
-//     circle_cursor.style.left = `${e.pageX}px`;
-//   circle_cursor.style.top = `${e.pageY}px`;
-//   });
+nav_items.forEach((item)=> item.addEventListener("click", toggleMenu))
 
 // Parallax effect
 
@@ -102,12 +100,13 @@ burger_icon.addEventListener("click", () => {
 // }
 
 // Header & Footer reveal  on scroll
-const checkpoint = 800;
-const checkpointFooter = 4850;
-let opacityHeader = 1;
+//========================================
 const header = document.querySelector(".header-content");
 const footer = document.querySelector("footer");
-
+const project1 = document.querySelector(".project1");
+const checkpoint = 800;
+const checkpointFooter = project1.getBoundingClientRect().top + document.documentElement.scrollTop;
+let opacityHeader = 1;
 
 
 const hideHeader = (currentScroll) => {
@@ -122,22 +121,17 @@ const hideHeader = (currentScroll) => {
   opacityHeader === 0 ? header.classList.add("no-display") : header.classList.remove("no-display");
   
 }
-const project1 = document.querySelector(".project1");
 
 const revealfooter = (currentScroll) => {
-  // if (currentScroll > checkpointFooter && window.innerWidth< 900) {
-  //   opacityFooter = 1;
-  //   footer.classList.remove("no-display");
-  // } else if (currentScroll > 5200 && window.innerWidth> 900) {
-  //   opacityFooter = 1;
-  //   footer.classList.remove("no-display");
-  // }  
-  if(project1.scrollHeight - project1.scrollTop - project1.clientHeight < 1){console.log("passed");}
+  if (currentScroll > checkpointFooter) {
+    opacityFooter = 1;
+    footer.classList.remove("no-display");
+  }
   else {
     opacityFooter = 0;
   }
-  currentScroll < 4500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
-  // footer.style.setProperty("opacity", opacityFooter);
+  currentScroll < checkpointFooter-500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
+  footer.style.setProperty("opacity", opacityFooter);
   
 }
 
@@ -148,7 +142,8 @@ revealfooter(window.pageYOffset)
 
 
 
-// Circles following cursor
+// Circles following cursor ///////////////
+//=======================================
 const cursorInner = document.querySelector('.cursor');
 const cursor = document.querySelector('#cursor');
 const cursorCircle = cursor.querySelector('.cursor-circle');
@@ -163,7 +158,6 @@ const updateCoordinates = e => {
 
 window.addEventListener('mousemove', updateCoordinates);
 
-
 function getAngle(diffX, diffY) {
     return Math.atan2(diffY, diffX) * 180 / Math.PI;
 }
@@ -176,7 +170,6 @@ function getSqueeze(diffX, diffY) {
     const accelerator = 1500;
     return Math.min(distance / accelerator, maxSqueeze);
 }
-
 
 const updateCursor = () => {
     const diffX = Math.round(mouse.x - pos.x);
@@ -202,17 +195,13 @@ function loop() {
     updateCursor();
     requestAnimationFrame(loop);
 }
-
 requestAnimationFrame(loop);
-
-
 
 const cursorModifiers = document.querySelectorAll('a');
 
 cursorModifiers.forEach(curosrModifier => {
     curosrModifier.addEventListener('mouseenter', function() {
       cursorCircle.classList.add("cursor-circle-grow");
-      console.log("entered");
         cursorInner.style.opacity = "0";
     });
 

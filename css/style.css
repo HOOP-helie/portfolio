@@ -355,24 +355,24 @@ main {
 /*========================================= */
 /* Section- COURSE / FORMATION============= */
 /*========================================= */
-.course-section {
+#course-section {
   margin-top: 10rem;
   text-align: center;
 }
-.course-section .current-course p:first-child {
+#course-section  .current-course p:first-child {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
 
-.course-section .current-course p:nth-child(2) {
+#course-section  .current-course p:nth-child(2) {
   font-size: 1.3rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.664);
 }
 
-.course-section .dates {
+#course-section  .dates {
   margin: 1rem auto 3rem;
   text-align: center;
   font-size: 3rem;
