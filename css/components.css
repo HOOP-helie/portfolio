@@ -1,4 +1,12 @@
-/* Cursor */
+.cursor, #cursor, .cursor-circle{
+  display: none;
+}
+
+  @media (min-width:63rem) {
+    .cursor, #cursor, .cursor-circle{
+      display: block;
+    }
+
 #cursor {
   top: 0;
   left: 0;
@@ -13,8 +21,8 @@
 .cursor {
   top: -4px;
   left: -4px;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   position: fixed;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 1);
@@ -40,10 +48,13 @@
   .cursor-circle-grow {
     width: 70px;
     height: 70px;
-    background-color: rgba(100, 148, 237, 0.623);
-    border:none;
+    background-color: rgba(100, 148, 237, 0.7);
+    border: solid 1px rgba(100, 148, 237, 0.7);
     mix-blend-mode: normal;
   }
+  }
+
+
 /* ===================================== */
 /* ===========Burger menu================ */
 /* ===================================== */

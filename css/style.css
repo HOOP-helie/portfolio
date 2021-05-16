@@ -14,8 +14,12 @@ body {
   position: relative;
 }
 
-.no-display{
+.no-display {
   display: none;
+}
+
+strong{
+  font-weight: 700;
 }
 /* ===================================== */
 /* ============= HEADER ================ */
@@ -50,27 +54,38 @@ header {
 }
 
 .header-title {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
   position: absolute;
-  top: 25%;
-  left: 10%;
-  line-height: 1.2;
-  font-size: 5rem;
-  font-size: clamp(2rem, 20vw, 7rem);
   z-index: 100;
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding-left: 12%;
 }
 
-.header-content p {
-  color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 60%;
-  left: 10%;
-  z-index: 100;
+.header-title p:first-child{
+  letter-spacing: 2px;
   font-size: 2rem;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(2rem, 8vw, 3rem);
+}
+
+.header-title h1 {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+  font-size: 5rem;
+  font-size: clamp(2rem, 18vw, 6rem);
+  font-family: "Playfair Display", serif;
   font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.header-title .subtitle {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-size: clamp(1rem, 3vw,2rem);
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 /* SVG CIRCLE SCROLL */
@@ -81,6 +96,7 @@ header {
   z-index: 100;
   width: 180px;
   height: 60px;
+  left: 5%;
 }
 
 #circle {
@@ -128,19 +144,18 @@ header {
 /* ==================================== */
 /* ==========  MAIN SECTION============ */
 /* ==================================== */
-#butter{
+#butter {
   /* position: fixed;
   top:0 */
   /* margin-top: 100vh; */
   margin-bottom: 350px;
-
 }
 main {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
-z-index: 5;
+  z-index: 5;
   position: relative;
-  width : 100%;
+  width: 100%;
   /* position : fixed; */
   margin-bottom: 350px;
   margin-top: 100vh;
@@ -279,10 +294,10 @@ z-index: 5;
 
 .see-project-btn::after {
   content: "";
-  height: 100%;
+  height: 110%;
   width: 40px;
   left: 0;
-  top: 0;
+  top: -10%;
   z-index: -1;
   position: absolute;
   background-color: #0bceff9f;
@@ -464,10 +479,10 @@ z-index: 5;
 /*========================================= */
 /* Section- REALISATIONS / PROJETS========== */
 /*========================================= */
-.projects {
+#projects {
   margin: 5rem auto;
 }
-.projects h3 {
+#projects h3 {
   font-size: 3.2rem;
   font-family: "Playfair Display", serif;
   text-align: center;
@@ -476,7 +491,7 @@ z-index: 5;
 
 .project1-img {
   position: relative;
-  margin: 3rem auto 2rem;
+  margin: 6rem auto 2rem;
   width: 90%;
   max-width: 25rem;
 }
@@ -538,4 +553,3 @@ z-index: 5;
 .project1-links a + a {
   margin-left: 3rem;
 }
-

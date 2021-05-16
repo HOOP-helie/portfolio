@@ -122,16 +122,22 @@ const hideHeader = (currentScroll) => {
   opacityHeader === 0 ? header.classList.add("no-display") : header.classList.remove("no-display");
   
 }
+const project1 = document.querySelector(".project1");
 
 const revealfooter = (currentScroll) => {
-  if (currentScroll > checkpointFooter) {
-    opacityFooter = 1;
-    footer.classList.remove("no-display");
-  } else {
+  // if (currentScroll > checkpointFooter && window.innerWidth< 900) {
+  //   opacityFooter = 1;
+  //   footer.classList.remove("no-display");
+  // } else if (currentScroll > 5200 && window.innerWidth> 900) {
+  //   opacityFooter = 1;
+  //   footer.classList.remove("no-display");
+  // }  
+  if(project1.scrollHeight - project1.scrollTop - project1.clientHeight < 1){console.log("passed");}
+  else {
     opacityFooter = 0;
   }
   currentScroll < 4500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
-  footer.style.setProperty("opacity", opacityFooter);
+  // footer.style.setProperty("opacity", opacityFooter);
   
 }
 
