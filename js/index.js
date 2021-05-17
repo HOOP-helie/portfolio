@@ -41,10 +41,10 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 // Momentum scroll with Butter JS
 var options = {
   wrapperId: "butter",
-  wrapperDamper: 0.09,
+  wrapperDamper: 0.06,
   cancelOnTouch: true,
 };
-// butter.init(options);
+butter.init(options);
 
 // Open the burger menu
 //======================================
@@ -122,22 +122,22 @@ const hideHeader = (currentScroll) => {
   
 }
 
-const revealfooter = (currentScroll) => {
-  if (currentScroll > checkpointFooter) {
-    opacityFooter = 1;
-    footer.classList.remove("no-display");
-  }
-  else {
-    opacityFooter = 0;
-  }
-  currentScroll < checkpointFooter-500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
-  footer.style.setProperty("opacity", opacityFooter);
+// const revealfooter = (currentScroll) => {
+//   if (currentScroll > checkpointFooter) {
+//     opacityFooter = 1;
+//     footer.classList.remove("no-display");
+//   }
+//   else {
+//     opacityFooter = 0;
+//   }
+//   currentScroll < checkpointFooter-500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
+//   footer.style.setProperty("opacity", opacityFooter);
   
-}
+// }
 
 window.addEventListener("scroll", () => {
   hideHeader( window.pageYOffset);
-revealfooter(window.pageYOffset)
+// revealfooter(window.pageYOffset)
 });
 
 
@@ -199,14 +199,17 @@ requestAnimationFrame(loop);
 
 const cursorModifiers = document.querySelectorAll('a');
 
-cursorModifiers.forEach(curosrModifier => {
-    curosrModifier.addEventListener('mouseenter', function() {
-      cursorCircle.classList.add("cursor-circle-grow");
+const growCursor=()=> {
+  cursorCircle.classList.add("cursor-circle-grow");
         cursorInner.style.opacity = "0";
-    });
+}
+const shrinkCursor=()=> {
+  cursorCircle.classList.remove("cursor-circle-grow");
+  cursorInner.style.opacity = "1";
+}
 
-    curosrModifier.addEventListener('mouseleave', function() {
-      cursorCircle.classList.remove("cursor-circle-grow");
-        cursorInner.style.opacity = "1";
-    });
-});
+
+cursorModifiers.forEach(curosrModifier => {
+  curosrModifier.addEventListener('mouseenter', growCursor);
+  curosrModifier.addEventListener('mouseleave', shrinkCursor);
+})

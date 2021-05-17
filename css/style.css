@@ -156,8 +156,6 @@ main {
   z-index: 5;
   position: relative;
   width: 100%;
-  /* position : fixed; */
-  margin-bottom: 350px;
   margin-top: 100vh;
   padding: 5rem 0;
 }

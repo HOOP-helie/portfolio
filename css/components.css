@@ -336,17 +336,17 @@ font-weight: 800;
 footer {
   padding: 3rem 2rem;
   color: #fff;
-  position: fixed;
-  height: 350px;
-  bottom: 0;
-  width: 100%;
+  position: relative; 
+ 
+width: 90%;
+margin: auto;
   /* visibility: hidden; */
 transition:0.6s;
-z-index: 0;
-opacity: 0;
+/* z-index: 0;s */
+/* opacity: 0; */
 }
 
-#footer-spy{height: 20px;}
+/* #footer-spy{height: 20px;} */
 
 .back-to-top{
   color: #fff;
