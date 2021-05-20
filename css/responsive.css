@@ -1,0 +1,29 @@
+@media (min-width: 46rem){
+    .header-details{
+        left: 10%;
+    }
+    .header-title{
+        top:45%
+    }
+    .header-title p:first-child{
+        font-size: 2rem;
+        font-size: clamp(2rem, 6vw, 5rem);
+
+      }
+      
+.header-title h1 {
+    margin-right: 2rem;
+  font-size: clamp(2rem, 10vw, 9rem);
+  }
+
+  .header-title .subtitle {
+    margin-top: 4rem;
+    font-size: clamp(1rem, 3vw,2.5rem);
+
+    letter-spacing: 1px;
+  }
+  #circle-container{
+      left:8%
+  }
+  
+}

@@ -38,13 +38,14 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 //   threshold: 1,
 // });
 
+
 // Momentum scroll with Butter JS
 var options = {
   wrapperId: "butter",
   wrapperDamper: 0.06,
   cancelOnTouch: true,
 };
-butter.init(options);
+// butter.init(options);
 
 // Open the burger menu
 //======================================
@@ -201,7 +202,8 @@ const cursorModifiers = document.querySelectorAll('a');
 
 const growCursor=()=> {
   cursorCircle.classList.add("cursor-circle-grow");
-        cursorInner.style.opacity = "0";
+  cursorInner.style.opacity = "0";
+  console.log("hi");
 }
 const shrinkCursor=()=> {
   cursorCircle.classList.remove("cursor-circle-grow");
@@ -212,4 +214,10 @@ const shrinkCursor=()=> {
 cursorModifiers.forEach(curosrModifier => {
   curosrModifier.addEventListener('mouseenter', growCursor);
   curosrModifier.addEventListener('mouseleave', shrinkCursor);
+})
+
+document.querySelectorAll(".cursor-hover").forEach(el => {
+  console.log("hi");
+  el.addEventListener('mouseenter', growCursor);
+  el.addEventListener('mouseleave', shrinkCursor);
 })

@@ -2,7 +2,7 @@
   display: none;
 }
 
-  @media (min-width:63rem) {
+  @media (min-width:64rem) {
     .cursor, #cursor, .cursor-circle{
       display: block;
     }

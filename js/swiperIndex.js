@@ -1,7 +1,11 @@
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
-  loop: true,
+  loop: false,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
     breakpoints: {
       800: {
         slidesPerView: 2,
@@ -15,6 +19,7 @@ const swiper = new Swiper('.swiper-container', {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable : true
     },
   
     // Navigation arrows
