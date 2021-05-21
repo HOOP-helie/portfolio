@@ -38,7 +38,6 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 //   threshold: 1,
 // });
 
-
 // Menu Indicator======================
 //======================================
 const navIndicatorContent = document.querySelector("#navigation-indicator p");
@@ -47,12 +46,15 @@ const navBullets = document.querySelectorAll(".nav-bullet");
 
 // Navigation indicator change text
 const navIndicatorChange = function (entries) {
-  console.log(entries);
+
   const [entry] = entries;
+  console.log(entry);
   if (entry.isIntersecting) {
-    navIndicatorContent.innerHTML = entry.target.dataset.indicator
-    navBullets.forEach(bullet => bullet.classList.remove("bullet-grow"))
-    document.querySelector(`.bullet${entry.target.dataset.number}`).classList.add("bullet-grow")
+    navIndicatorContent.innerHTML = entry.target.dataset.indicator? entry.target.dataset.indicator : "";
+    navBullets.forEach((bullet) => bullet.classList.remove("bullet-grow"));
+    document
+      .querySelector(`.bullet${entry.target.dataset.number}`)
+      .classList.add("bullet-grow");
   }
 };
 
@@ -61,7 +63,9 @@ const navObserver = new IntersectionObserver(navIndicatorChange, {
   threshold: 0.2,
 });
 
-document.querySelectorAll(".section-observe").forEach(section => navObserver.observe(section));
+document
+  .querySelectorAll(".section-observe")
+  .forEach((section) => navObserver.observe(section));
 
 // Momentum scroll with Butter JS
 var options = {
@@ -102,13 +106,13 @@ const toggleMenu = () => {
       letter.classList.toggle("nav-item-letter-visible")
     );
   }
-}
-  
+};
+
 burger_icon.addEventListener("click", () => {
   toggleMenu();
 });
 
-nav_items.forEach((item)=> item.addEventListener("click", toggleMenu))
+nav_items.forEach((item) => item.addEventListener("click", toggleMenu));
 
 // Parallax effect
 
@@ -128,107 +132,100 @@ const header = document.querySelector(".header-content");
 const footer = document.querySelector("footer");
 const project1 = document.querySelector(".project1");
 const checkpoint = 800;
-const checkpointFooter = project1.getBoundingClientRect().top + document.documentElement.scrollTop;
+const checkpointFooter =
+  project1.getBoundingClientRect().top + document.documentElement.scrollTop;
 let opacityHeader = 1;
-
 
 const hideHeader = (currentScroll) => {
   if (currentScroll < checkpoint) {
     opacityHeader = 1 - currentScroll / 700;
-    navIndicator.style.opacity=0
+    navIndicator.style.opacity = 0;
   } else {
     opacityHeader = 0;
-    navIndicator.style.opacity=1
-
+    navIndicator.style.opacity = 1;
   }
   document
     .querySelectorAll(".scroll-opacity")
     .forEach((el) => el.style.setProperty("opacity", opacityHeader));
-  opacityHeader === 0 ? header.classList.add("no-display") : header.classList.remove("no-display");
-  
-}
+  opacityHeader === 0
+    ? header.classList.add("no-display")
+    : header.classList.remove("no-display");
+};
 
 window.addEventListener("scroll", () => {
-  hideHeader( window.pageYOffset);
+  hideHeader(window.pageYOffset);
 });
-
-
 
 // Circles following cursor =============
 //=======================================
-const cursorInner = document.querySelector('.cursor');
-const cursor = document.querySelector('#cursor');
-const cursorCircle = cursor.querySelector('.cursor-circle');
+const cursorInner = document.querySelector(".cursor");
+const cursor = document.querySelector("#cursor");
+const cursorCircle = cursor.querySelector(".cursor-circle");
 const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
 const pos = { x: 0, y: 0 }; // cursor's coordinates
 const speed = 0.1; // between 0 and 1
 
-const updateCoordinates = e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-}
+const updateCoordinates = (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+};
 
-window.addEventListener('mousemove', updateCoordinates);
+window.addEventListener("mousemove", updateCoordinates);
 
 function getAngle(diffX, diffY) {
-    return Math.atan2(diffY, diffX) * 180 / Math.PI;
+  return (Math.atan2(diffY, diffX) * 180) / Math.PI;
 }
 
 function getSqueeze(diffX, diffY) {
-    const distance = Math.sqrt(
-        Math.pow(diffX, 2) + Math.pow(diffY, 2)
-    );
-    const maxSqueeze = 0.15;
-    const accelerator = 1500;
-    return Math.min(distance / accelerator, maxSqueeze);
+  const distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+  const maxSqueeze = 0.15;
+  const accelerator = 1500;
+  return Math.min(distance / accelerator, maxSqueeze);
 }
 
 const updateCursor = () => {
-    const diffX = Math.round(mouse.x - pos.x);
-    const diffY = Math.round(mouse.y - pos.y);
+  const diffX = Math.round(mouse.x - pos.x);
+  const diffY = Math.round(mouse.y - pos.y);
 
-    pos.x += diffX * speed;
-    pos.y += diffY * speed;
+  pos.x += diffX * speed;
+  pos.y += diffY * speed;
 
-    const angle = getAngle(diffX, diffY);
-    const squeeze = getSqueeze(diffX, diffY);
+  const angle = getAngle(diffX, diffY);
+  const squeeze = getSqueeze(diffX, diffY);
 
-    const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
-    const rotate = 'rotate(' + angle +'deg)';
-    const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+  const scale = "scale(" + (1 + squeeze) + ", " + (1 - squeeze) + ")";
+  const rotate = "rotate(" + angle + "deg)";
+  const translate = "translate3d(" + pos.x + "px ," + pos.y + "px, 0)";
 
-
-    cursorInner.style.transform = translate;
-    cursor.style.transform = translate;
-    cursorCircle.style.transform = rotate + scale;
+  cursorInner.style.transform = translate;
+  cursor.style.transform = translate;
+  cursorCircle.style.transform = rotate + scale;
 };
 
 function loop() {
-    updateCursor();
-    requestAnimationFrame(loop);
+  updateCursor();
+  requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
 
-const cursorModifiers = document.querySelectorAll('a');
+const cursorModifiers = document.querySelectorAll("a");
 
-const growCursor=()=> {
+const growCursor = () => {
   cursorCircle.classList.add("cursor-circle-grow");
   cursorInner.style.opacity = "0";
-  console.log("hi");
-}
-const shrinkCursor=()=> {
+};
+const shrinkCursor = () => {
   cursorCircle.classList.remove("cursor-circle-grow");
   cursorInner.style.opacity = "1";
-}
+};
 
+cursorModifiers.forEach((curosrModifier) => {
+  curosrModifier.addEventListener("mouseenter", growCursor);
+  curosrModifier.addEventListener("mouseleave", shrinkCursor);
+});
 
-cursorModifiers.forEach(curosrModifier => {
-  curosrModifier.addEventListener('mouseenter', growCursor);
-  curosrModifier.addEventListener('mouseleave', shrinkCursor);
-})
-
-document.querySelectorAll(".cursor-hover").forEach(el => {
+document.querySelectorAll(".cursor-hover").forEach((el) => {
   console.log("hi");
-  el.addEventListener('mouseenter', growCursor);
-  el.addEventListener('mouseleave', shrinkCursor);
-})
+  el.addEventListener("mouseenter", growCursor);
+  el.addEventListener("mouseleave", shrinkCursor);
+});

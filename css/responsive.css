@@ -33,6 +33,9 @@
     animation: defile-anim 50s infinite linear;
   }
 
-
+#about, .course-subjects-container>div{
+  width: 82%;
+  margin: auto;
+}
 
 }
