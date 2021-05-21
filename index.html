@@ -60,8 +60,28 @@
         <span class="burger-item1"></span><span class="burger-item2"></span><span class="burger-item3"></span>
     </div>
 
+    <!-- ------------------------NAVIGATION INDICATOR---------------------------->
+    <div id="navigation-indicator">
+        <p>Welcome</p>
+    </div>
+    <div id="nav-bullets">
+      <a href="#">  
+          <div class="nav-bullet bullet1 bullet-grow"></div>
+        </a>
+       <a href="#about">
+           <div class="nav-bullet bullet2"></div>
+        </a>  
+        <a href="#course-section">
+            <div class="nav-bullet bullet3"></div>
+        </a>
+        <a href="#projects">
+            <div class="nav-bullet bullet4"></div>
+        </a>
+    </div>
+
     <!-- ------------------------HEADER / INTRODUCTION---------------------------->
-    <header id="header">
+    <!-- class="section-observe" data-indicator="welcome" -->
+    <header id="header" data-number="1" >
         <div class="content content--canvas">
             <div class="header-content">
                 <h2 class="header-details scroll-opacity">HORNN Ophélie - Portfolio 2021</h2>
@@ -72,7 +92,7 @@
                 </div>
                 <div id="circle-container" class="scroll-opacity">
                     <div id="circle">
-                        <a href="#defile">
+                        <a href="#main">
                         <i class="fas fa-arrow-down"></i>
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300"
@@ -104,12 +124,13 @@
 
     <!-- Butter.js for momentum scrolling  on desktop-->
     <div id="butter">
-        <main>
-            <div id="defile">
-                <div id="text-defile">Welcome - Welcome - Welcome - Welcome - Welcome - Welcome - Welcome - </div>
+        <main id="main">
+            <div class="defile-container">
+                <div class="text-defile">Welcome - Welcome - Welcome - Welcome - Welcome - Welcome - Welcome -&nbsp;</div>
+                <div class="text-defile">Welcome - Welcome - Welcome - Welcome - Welcome - Welcome - Welcome -&nbsp;</div>
             </div>
 
-            <section id="about">
+            <section id="about"  class="section-observe" data-indicator="À propos" data-number="2">
                 <div class="about-section1 ">
                     <div class="about-section1-img">
                         <img src="assets/1x/about.png" alt="Illustration de personnages sur un ordinateur">
@@ -151,7 +172,7 @@
             <!-- =================================== -->
             <!-- Section formation =================-->
             <!-- =================================== -->
-            <section id="course-section">
+            <section id="course-section"  class="section-observe" data-indicator="Formation" data-number="3">
                 <div class="current-course">
                     <p>Actuellement en formation</p>
                     <p>Au Campus du Lac</p>
@@ -223,7 +244,7 @@
             <!-- =================================== -->
             <!-- Section Réalisations =================-->
             <!-- =================================== -->
-            <section id="projects">
+            <section id="projects"  class="section-observe" data-indicator="Projets" data-number="4">
                 <h3>Réalisations</h3>
                 <div class="slider-title">
                     <p>Front-end Mentor</p>
@@ -344,7 +365,7 @@
         <!-- </div> -->
         <footer>
             <div class="footer-header">
-                <a href="#defile" class="back-to-top">
+                <a href="#main" class="back-to-top">
                     <i class="fas fa-chevron-up"> </i>
                 </a>
                 <p>Let's get in touch</p>

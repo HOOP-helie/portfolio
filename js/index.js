@@ -9,11 +9,6 @@ const nav_items = document.querySelectorAll(".navigation-item");
 const nav_letters_container = document.querySelectorAll(
   ".nav-link .letters-container"
 );
-// const all_sections = document.querySelectorAll(".to-reveal");
-
-// all_sections.forEach(function (section) {
-//   sectionObserver.observe(section);
-// });
 
 nav_letters_container.forEach((container) => {
   container.innerHTML = container.textContent.replace(
@@ -23,6 +18,11 @@ nav_letters_container.forEach((container) => {
 });
 const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 
+// const all_sections = document.querySelectorAll(".to-reveal");
+
+// all_sections.forEach(function (section) {
+//   sectionObserver.observe(section);
+// });
 
 // Reveal Elements on Scroll
 // const revealSectionImg = function (entries, observer) {
@@ -39,6 +39,30 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 // });
 
 
+// Menu Indicator======================
+//======================================
+const navIndicatorContent = document.querySelector("#navigation-indicator p");
+const navIndicator = document.querySelector("#navigation-indicator");
+const navBullets = document.querySelectorAll(".nav-bullet");
+
+// Navigation indicator change text
+const navIndicatorChange = function (entries) {
+  console.log(entries);
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    navIndicatorContent.innerHTML = entry.target.dataset.indicator
+    navBullets.forEach(bullet => bullet.classList.remove("bullet-grow"))
+    document.querySelector(`.bullet${entry.target.dataset.number}`).classList.add("bullet-grow")
+  }
+};
+
+const navObserver = new IntersectionObserver(navIndicatorChange, {
+  root: null,
+  threshold: 0.2,
+});
+
+document.querySelectorAll(".section-observe").forEach(section => navObserver.observe(section));
+
 // Momentum scroll with Butter JS
 var options = {
   wrapperId: "butter",
@@ -47,7 +71,7 @@ var options = {
 };
 // butter.init(options);
 
-// Open the burger menu
+// Open the burger menu================
 //======================================
 let menuIsOpen = false;
 const toggleMenu = () => {
@@ -81,9 +105,7 @@ const toggleMenu = () => {
 }
   
 burger_icon.addEventListener("click", () => {
-  
   toggleMenu();
-
 });
 
 nav_items.forEach((item)=> item.addEventListener("click", toggleMenu))
@@ -100,7 +122,7 @@ nav_items.forEach((item)=> item.addEventListener("click", toggleMenu))
 //   })
 // }
 
-// Header & Footer reveal  on scroll
+// Header hide  on scroll
 //========================================
 const header = document.querySelector(".header-content");
 const footer = document.querySelector("footer");
@@ -113,8 +135,11 @@ let opacityHeader = 1;
 const hideHeader = (currentScroll) => {
   if (currentScroll < checkpoint) {
     opacityHeader = 1 - currentScroll / 700;
+    navIndicator.style.opacity=0
   } else {
     opacityHeader = 0;
+    navIndicator.style.opacity=1
+
   }
   document
     .querySelectorAll(".scroll-opacity")
@@ -123,27 +148,13 @@ const hideHeader = (currentScroll) => {
   
 }
 
-// const revealfooter = (currentScroll) => {
-//   if (currentScroll > checkpointFooter) {
-//     opacityFooter = 1;
-//     footer.classList.remove("no-display");
-//   }
-//   else {
-//     opacityFooter = 0;
-//   }
-//   currentScroll < checkpointFooter-500 ? footer.classList.add("no-display") : footer.classList.remove("no-display");
-//   footer.style.setProperty("opacity", opacityFooter);
-  
-// }
-
 window.addEventListener("scroll", () => {
   hideHeader( window.pageYOffset);
-// revealfooter(window.pageYOffset)
 });
 
 
 
-// Circles following cursor ///////////////
+// Circles following cursor =============
 //=======================================
 const cursorInner = document.querySelector('.cursor');
 const cursor = document.querySelector('#cursor');
