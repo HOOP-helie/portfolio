@@ -32,7 +32,7 @@
     font-size: 4rem;
     animation: defile-anim 50s infinite linear;
   }
-  #course-section  .dates{
+  #course-section .dates {
     font-size: 4rem;
   }
   #about,
@@ -45,11 +45,35 @@
     width: 85%;
   }
 
+  #projects h3 {
+    font-size: 3.5rem;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+  }
+  .slider-title p:first-child {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .slider-title p:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .project1-content .project-title{
+    font-size: 1.4rem;
+  }
+
   .project1-content {
+    font-size: 1.2rem;
     width: 70%;
   }
 
-  #course-section .current-course p:first-child{
+  .project1-links {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  #course-section .current-course p:first-child {
     font-size: 2.3rem;
   }
 }
@@ -65,7 +89,10 @@
   .about-section1-content {
     width: 50%;
   }
+  .about-section1-content p{
+    line-height: 1.8;
 
+  }
   .about-section1-img-box {
     max-width: 700px;
   }
@@ -76,7 +103,6 @@
   }
 
   .about-section1-img-box::after {
-    /* max-width: 25rem; */
     max-width: 30rem;
   }
   .about-section1-content {
@@ -86,32 +112,67 @@
     font-size: 1.5rem;
   }
 
-  #course-section .current-course p:first-child{
+  .about-section2{
+    max-width: 70rem;
+    text-align: center;
+    margin: 10rem auto 2rem;
+  }
+
+  .frontend-passion{
+    line-height: 2;
+    font-size: 1.2rem;
+  }
+
+  #course-section .current-course p:first-child {
     font-size: 2.6rem;
   }
-  #course-section .current-course p:nth-child(2){
+  #course-section .current-course p:nth-child(2) {
     font-size: 1.5rem;
   }
 
-  #course-section  .dates{
+  #course-section .dates {
     font-size: 5rem;
   }
 
-  .course-subjects-container{
+  .course-subjects-container {
     display: flex;
   }
 
-  .course-subject{
-    margin:0;
+  .course-subject {
+    margin: 0;
     display: flex;
     flex-direction: column;
   }
 
-.front-subject .subject-content, .back-subject .subject-content{
-  margin-top: 1rem;
-}
-  .empty-subject{
-display: block;
-width: 15%;
+  .front-subject .subject-content,
+  .back-subject .subject-content {
+    margin-top: 1rem;
+  }
+  .empty-subject {
+    display: block;
+    width: 15%;
+  }
+
+  .project1{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    max-width: 78rem;
+  }
+  .project1-img{
+    width: 40%;
+  }
+  .project1-img .big-img{
+    width: 100%;
+  }
+
+  .project1-img .small-img{
+    width: 75%;
+    left: 50%;
+  }
+  .project1-content{
+    width: 60%;
+    padding-left: 15%;
+
   }
 }

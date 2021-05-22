@@ -94,6 +94,8 @@
   align-items: flex-end;
   justify-content: space-around;
   padding: 10px 10px;
+  box-shadow: 0 0 0 0 rgba(0, 194, 253, 0.63);
+
 }
 
 .burger-icon:hover {
