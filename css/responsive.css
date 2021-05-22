@@ -32,10 +32,86 @@
     font-size: 4rem;
     animation: defile-anim 50s infinite linear;
   }
+  #course-section  .dates{
+    font-size: 4rem;
+  }
+  #about,
+  .course-subject {
+    width: 82%;
+    margin: auto;
+  }
 
-#about, .course-subjects-container>div{
-  width: 82%;
-  margin: auto;
+  .swiper-container {
+    width: 85%;
+  }
+
+  .project1-content {
+    width: 70%;
+  }
+
+  #course-section .current-course p:first-child{
+    font-size: 2.3rem;
+  }
 }
 
+@media (min-width: 70rem) {
+  .about-section1 {
+    display: flex;
+    align-items: center;
+    max-width: 100rem;
+  }
+
+  .about-section1-img-box,
+  .about-section1-content {
+    width: 50%;
+  }
+
+  .about-section1-img-box {
+    max-width: 700px;
+  }
+
+  .about-section1-img {
+    width: 100%;
+    max-width: 35rem;
+  }
+
+  .about-section1-img-box::after {
+    /* max-width: 25rem; */
+    max-width: 30rem;
+  }
+  .about-section1-content {
+    font-size: 1.2rem;
+  }
+  .about-section1-content .goal {
+    font-size: 1.5rem;
+  }
+
+  #course-section .current-course p:first-child{
+    font-size: 2.6rem;
+  }
+  #course-section .current-course p:nth-child(2){
+    font-size: 1.5rem;
+  }
+
+  #course-section  .dates{
+    font-size: 5rem;
+  }
+
+  .course-subjects-container{
+    display: flex;
+  }
+
+  .course-subject{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+  }
+
+.front-subject .subject-content, .back-subject .subject-content{
+  margin-top: 1rem;
+}
+  .empty-subject{
+display: block;
+width: 15%;
+  }
 }

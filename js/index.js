@@ -46,10 +46,9 @@ const navBullets = document.querySelectorAll(".nav-bullet");
 
 // Navigation indicator change text
 const navIndicatorChange = function (entries) {
-
   const [entry] = entries;
   console.log(entry);
-  if (entry.isIntersecting) {
+  if (entry.isIntersecting || entry.isIntersecting && entry.isVisible) {
     navIndicatorContent.innerHTML = entry.target.dataset.indicator? entry.target.dataset.indicator : "";
     navBullets.forEach((bullet) => bullet.classList.remove("bullet-grow"));
     document
