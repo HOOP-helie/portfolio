@@ -30,7 +30,7 @@
   /* ==================================== */
   .text-defile {
     font-size: 4rem;
-    animation: defile-anim 50s infinite linear;
+    animation: defile-anim 100s infinite linear;
   }
   #course-section .dates {
     font-size: 4rem;
@@ -106,19 +106,19 @@
     max-width: 30rem;
   }
   .about-section1-content {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .about-section1-content .goal {
     font-size: 1.5rem;
   }
 
   .about-section2{
-    max-width: 70rem;
+    max-width: 62rem;
     text-align: center;
     margin: 10rem auto 2rem;
   }
 
-  .frontend-passion{
+  .about-section2 p{
     line-height: 2;
     font-size: 1.2rem;
   }
