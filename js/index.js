@@ -39,19 +39,45 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 // });
 
 const portfolioContent = document.querySelector("#portfolio-content");
-document.onreadystatechange = function() {
+const headerTitle = document.querySelector(".header-title");
+const helloTitle = document.querySelector(".hello-title");
+const nameTitle = document.querySelector(".name-title");
+const subtitle = document.querySelector(".subtitle");
+const headerElementsReveal = document.querySelectorAll(".header-reveal");
+
+document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
-      portfolioContent.style.visibility = "hidden";
+    portfolioContent.style.visibility = "hidden";
   } else {
-setTimeout(() => {
-  document.querySelector('body').classList.add("loaded")
-  portfolioContent.style.visibility = "visible";
-}, 500);
-  setTimeout(() => {
-    document.querySelector(".hello-title").classList.add("anim-inner-left");
-    document.querySelector(".name-title").classList.add("anim-text-clip");
-    document.querySelector(".header-title").classList.add("anim-outer-left");
-  }, 1200);
+    setTimeout(() => {
+      document.querySelector("body").classList.add("loaded");
+      portfolioContent.style.visibility = "visible";
+      setTimeout(() => {
+        helloTitle.classList.add("anim-text-clip");
+      }, 1200);
+      setTimeout(() => {
+        nameTitle.classList.add("anim-text-clip");
+      }, 2500);
+      setTimeout(() => {
+        headerTitle.classList.add("anim-outer-left");
+        helloTitle.classList.add("anim-inner-left");
+      }, 3700);
+      setTimeout(() => {
+        subtitle.classList.add("subtitle-reveal");
+      }, 4800);
+      setTimeout(() => {
+        headerElementsReveal.forEach((el) =>
+          el.classList.add("header-reveal-end")
+        );
+      },6000);
+      setTimeout(() => {
+        headerElementsReveal.forEach((el) =>
+          el.style.setProperty("transition", "none")
+        );
+        headerTitle.style.setProperty("transition", "none")
+      }, 6300);
+    }, 500);
+   
   }
 };
 
@@ -65,8 +91,10 @@ const navBullets = document.querySelectorAll(".nav-bullet");
 const navIndicatorChange = function (entries) {
   const [entry] = entries;
   console.log(entry);
-  if (entry.isIntersecting || entry.isIntersecting && entry.isVisible) {
-    navIndicatorContent.innerHTML = entry.target.dataset.indicator? entry.target.dataset.indicator : "";
+  if (entry.isIntersecting || (entry.isIntersecting && entry.isVisible)) {
+    navIndicatorContent.innerHTML = entry.target.dataset.indicator
+      ? entry.target.dataset.indicator
+      : "";
     navBullets.forEach((bullet) => bullet.classList.remove("bullet-grow"));
     document
       .querySelector(`.bullet${entry.target.dataset.number}`)

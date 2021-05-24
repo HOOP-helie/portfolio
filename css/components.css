@@ -176,7 +176,7 @@
 .loaded #loader-wrapper {
   visibility: hidden;
   transform: translateY(-100%);
-  transition: all 0.3s 1s ease-out;
+  transition: all 1s 1s ease-out;
 }
 
 
@@ -341,7 +341,6 @@
     right: 4%;
     bottom: 6%;
     z-index: 100;
-    opacity: 0.8;
   }
   #nav-bullets::before{
     background-color: rgb(107, 107, 107);
