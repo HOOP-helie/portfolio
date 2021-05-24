@@ -21,6 +21,10 @@ body {
 strong{
   font-weight: 700;
 }
+
+
+
+
 /* ===================================== */
 /* ============= HEADER ================ */
 /* ===================================== */
@@ -66,19 +70,23 @@ header {
   position: absolute;
   z-index: 100;
   top: 50%;
-  transform: translateY(-50%);
   width: 100%;
   padding-left: 12%;
+  transform: translate(10%,-50%);
+
 }
 
-.header-title p:first-child{
+ .hello-title{
   letter-spacing: 2px;
   font-size: 2rem;
   font-size: clamp(2rem, 8vw, 3rem);
   margin-bottom: 1rem;
+  transform: translateX(15vw);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+
 }
 
-.header-title h1 {
+.name-title {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.2;
   font-size: 5rem;
@@ -86,6 +94,7 @@ header {
   font-family: "Playfair Display", serif;
   font-weight: 500;
   letter-spacing: 2px;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
 .header-title .subtitle {
@@ -97,6 +106,55 @@ header {
   letter-spacing: 1px;
 }
 
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.anim-outer-left{
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both
+}
+
+.anim-inner-left{
+animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both, inner-left 1s 1s ease both
+}
+
+.anim-text-clip{
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both 
+  }
+
+
+@keyframes outer-left {
+  from {
+    transform: translate(10%,-50%);
+  }
+  to {
+    transform :translate(0,-50%);
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(15vw);
+  }
+  to {
+    transform: translateX(0)
+  }
+}
+
+@keyframes header-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* SVG CIRCLE SCROLL */
 /* ============================= */
 #circle-container {

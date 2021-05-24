@@ -5,12 +5,12 @@
   .header-title {
     top: 45%;
   }
-  .header-title p:first-child {
+  .header-title .hello-title {
     font-size: 2rem;
     font-size: clamp(2rem, 6vw, 4rem);
   }
 
-  .header-title h1 {
+  .header-title .name-title {
     margin-right: 2rem;
     font-size: clamp(2rem, 10vw, 8rem);
   }

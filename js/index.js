@@ -38,6 +38,23 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 //   threshold: 1,
 // });
 
+const portfolioContent = document.querySelector("#portfolio-content");
+document.onreadystatechange = function() {
+  if (document.readyState !== "complete") {
+      portfolioContent.style.visibility = "hidden";
+  } else {
+setTimeout(() => {
+  document.querySelector('body').classList.add("loaded")
+  portfolioContent.style.visibility = "visible";
+}, 500);
+  setTimeout(() => {
+    document.querySelector(".hello-title").classList.add("anim-inner-left");
+    document.querySelector(".name-title").classList.add("anim-text-clip");
+    document.querySelector(".header-title").classList.add("anim-outer-left");
+  }, 1200);
+  }
+};
+
 // Menu Indicator======================
 //======================================
 const navIndicatorContent = document.querySelector("#navigation-indicator p");
