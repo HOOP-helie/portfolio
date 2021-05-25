@@ -41,27 +41,39 @@
     width: 82%;
     margin: auto;
   }
+  .about-section1 h3,
+  .about-section2 h3 {
+    font-size: 2.5rem;
+  }
+
+  .front-subject .subject-content,
+  .back-subject .subject-content {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
 
   .swiper-container {
     width: 85%;
   }
 
   #projects h3 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-top: 8rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+
   }
   .slider-title p:first-child {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
   }
   .slider-title p:nth-child(2) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    margin-bottom: 2rem;
   }
 
-  .project1-content .project-title{
-    font-size: 1.4rem;
+  .project1-content .project-title {
+    font-size: 1.8rem;
   }
 
   .project1-content {
@@ -74,6 +86,8 @@
     margin-top: 2rem;
     text-align: left;
   }
+
+ 
   #course-section .current-course p:first-child {
     font-size: 2.3rem;
   }
@@ -90,9 +104,23 @@
   .about-section1-content {
     width: 50%;
   }
-  .about-section1-content p{
-    line-height: 1.8;
 
+  .about-section1 h3,
+  .about-section2 h3 {
+    font-size: 3rem;
+  }
+
+  .about-section2 h3 {
+    margin-bottom: 2.5rem;
+  }
+  .about-section2 h3:after {
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-section1-content p {
+    line-height: 1.8;
   }
   .about-section1-img-box {
     max-width: 700px;
@@ -113,17 +141,19 @@
     font-size: 1.5rem;
   }
 
-  .about-section2{
+  .about-section2 {
     max-width: 62rem;
     text-align: center;
     margin: 10rem auto 2rem;
   }
 
-  .about-section2 p{
+  .about-section2 p {
     line-height: 2;
     font-size: 1.2rem;
   }
-
+  #course-section {
+    margin-top: 15rem;
+  }
   #course-section .current-course p:first-child {
     font-size: 2.6rem;
   }
@@ -149,31 +179,39 @@
   .back-subject .subject-content {
     margin-top: 1rem;
   }
+
+
   .empty-subject {
     display: block;
     width: 15%;
   }
+  #projects{
+    margin-top: 15rem;
+  }
 
-  .project1{
+  #projects h3 {
+    font-size: 5rem;
+  
+  }
+  .project1 {
     display: flex;
     width: 90%;
     margin: auto;
     max-width: 78rem;
   }
-  .project1-img{
+  .project1-img {
     width: 40%;
   }
-  .project1-img .big-img{
+  .project1-img .big-img {
     width: 100%;
   }
 
-  .project1-img .small-img{
+  .project1-img .small-img {
     width: 75%;
     left: 50%;
   }
-  .project1-content{
+  .project1-content {
     width: 60%;
     padding-left: 15%;
-
   }
 }

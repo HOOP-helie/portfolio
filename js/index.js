@@ -18,33 +18,73 @@ nav_letters_container.forEach((container) => {
 });
 const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 
-// const all_sections = document.querySelectorAll(".to-reveal");
 
-// all_sections.forEach(function (section) {
-//   sectionObserver.observe(section);
-// });
+// Reveal Elements (opacity only) on Scroll
+const revealOpacity = function (entries, observer) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+    observer.unobserve(entry.target);
+  }
+};
 
-// Reveal Elements on Scroll
-// const revealSectionImg = function (entries, observer) {
-//   const [entry] = entries;
-//   if (entry.isIntersecting) {
-//       entry.target.classList.add("reveal");
-//     observer.unobserve(entry.target);
-//   }
-// };
+const opacityObserver = new IntersectionObserver(revealOpacity, {
+  root: null,
+  threshold: 1,
+});
 
-// const sectionObserver = new IntersectionObserver(revealSectionImg, {
-//   root: null,
-//   threshold: 1,
-// });
+const all_opacity = document.querySelectorAll(".to-reveal");
+all_opacity.forEach(function (section) {
+  opacityObserver.observe(section);
+});
 
+// Reveal Elements (opacity + slideup )on Scroll
+const revealSlide = function (entries, observer) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+      entry.target.classList.add("slide-up");
+    observer.unobserve(entry.target);
+  }
+};
+
+const slideObserver = new IntersectionObserver(revealSlide, {
+  root: null,
+  threshold: 1,
+});
+
+const all_slideup = document.querySelectorAll(".to-slide-up");
+all_slideup.forEach(function (section) {
+  slideObserver.observe(section);
+});
+
+// Reveal Elements (opacity + slideup )on Scroll threshold sooner
+const revealSlide2 = function (entries, observer) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+      entry.target.classList.add("slide-up");
+    observer.unobserve(entry.target);
+  }
+};
+
+const slideObserver2 = new IntersectionObserver(revealSlide2, {
+  root: null,
+  threshold: 0.1,
+});
+
+const all_slideup2 = document.querySelectorAll(".to-slide-up2");
+all_slideup2.forEach(function (section) {
+  slideObserver2.observe(section);
+});
+
+// Header animation when loading finishes
 const portfolioContent = document.querySelector("#portfolio-content");
 const headerTitle = document.querySelector(".header-title");
 const helloTitle = document.querySelector(".hello-title");
 const nameTitle = document.querySelector(".name-title");
 const subtitle = document.querySelector(".subtitle");
+// const burger = document.querySelector(".subtitle");
 const headerElementsReveal = document.querySelectorAll(".header-reveal");
-
+const burger = [burger_icon, menu_background];
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     portfolioContent.style.visibility = "hidden";
@@ -57,26 +97,26 @@ document.onreadystatechange = function () {
       }, 1200);
       setTimeout(() => {
         nameTitle.classList.add("anim-text-clip");
-      }, 2500);
+      }, 1900);
       setTimeout(() => {
         headerTitle.classList.add("anim-outer-left");
         helloTitle.classList.add("anim-inner-left");
-      }, 3700);
+      }, 3200);
       setTimeout(() => {
         subtitle.classList.add("subtitle-reveal");
-      }, 4800);
+      }, 4100);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
-          el.classList.add("header-reveal-end")
-        );
-      },6000);
+          el.classList.add("header-reveal-end"));
+        burger.forEach(el => el.classList.add("burger-reveal"));
+      },5200);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
           el.style.setProperty("transition", "none")
         );
         headerTitle.style.setProperty("transition", "none")
-      }, 6300);
-    }, 500);
+      }, 5500);
+    }, 900);
    
   }
 };
@@ -111,13 +151,7 @@ document
   .querySelectorAll(".section-observe")
   .forEach((section) => navObserver.observe(section));
 
-// Momentum scroll with Butter JS
-var options = {
-  wrapperId: "butter",
-  wrapperDamper: 0.06,
-  cancelOnTouch: true,
-};
-// butter.init(options);
+
 
 // Open the burger menu================
 //======================================
@@ -158,17 +192,6 @@ burger_icon.addEventListener("click", () => {
 
 nav_items.forEach((item) => item.addEventListener("click", toggleMenu));
 
-// Parallax effect
-
-// function parallaxScroll = () => {
-//   window.addEventListener('scroll', () => {
-//     var value = window.scrollY;
-//     name_heading.style.top = (-value * 0.015 + 30) + "%";
-//     goal_heading.style.top = (-value * 0.015 + 50) + "%";
-//     svg_heading.style.bottom = (value * 0.03 + 15) + "%";
-//     welcome_heading.style.bottom = (value * 0.015 + 30) + "%";
-//   })
-// }
 
 // Header hide  on scroll
 //========================================
@@ -182,7 +205,7 @@ let opacityHeader = 1;
 
 const hideHeader = (currentScroll) => {
   if (currentScroll < checkpoint) {
-    opacityHeader = 1 - currentScroll / 700;
+    opacityHeader = 1 - currentScroll / 500;
     navIndicator.style.opacity = 0;
   } else {
     opacityHeader = 0;
