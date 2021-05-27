@@ -34,7 +34,7 @@ strong {
 .to-slide-up, .to-slide-up2 {
   transform: translateY(30%);
   opacity: 0;
-  transition: 1s cubic-bezier(0.25, 0.2, 0.25, 1.0) ;
+  transition: 1.2s cubic-bezier(0.25, 0.2, 0.25, 1.0) ;
 }
 
 .slide-up {
@@ -310,7 +310,7 @@ main {
   transform: translateX(-50%);
   position: absolute;
   /* background-color: blanchedalmond; */
-  animation: pulse-float 4s infinite;
+  animation: pulse-float 2.5s infinite;
 }
 
 @media (max-width: 544px) {
@@ -509,7 +509,7 @@ main {
 }
 
 #course-section .dates {
-  margin: 1rem auto 3rem;
+  margin: 1rem auto 5rem;
   text-align: center;
   font-size: 3rem;
   color: #0bceffa8;
@@ -625,7 +625,7 @@ main {
 #projects h3 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .project1-img {

@@ -38,6 +38,7 @@ all_opacity.forEach(function (section) {
   opacityObserver.observe(section);
 });
 
+
 // Reveal Elements (opacity + slideup )on Scroll
 const revealSlide = function (entries, observer) {
   const [entry] = entries;
@@ -56,6 +57,7 @@ const all_slideup = document.querySelectorAll(".to-slide-up");
 all_slideup.forEach(function (section) {
   slideObserver.observe(section);
 });
+
 
 // Reveal Elements (opacity + slideup )on Scroll threshold sooner
 const revealSlide2 = function (entries, observer) {
@@ -82,7 +84,6 @@ const headerTitle = document.querySelector(".header-title");
 const helloTitle = document.querySelector(".hello-title");
 const nameTitle = document.querySelector(".name-title");
 const subtitle = document.querySelector(".subtitle");
-// const burger = document.querySelector(".subtitle");
 const headerElementsReveal = document.querySelectorAll(".header-reveal");
 const burger = [burger_icon, menu_background];
 document.onreadystatechange = function () {
@@ -121,16 +122,18 @@ document.onreadystatechange = function () {
   }
 };
 
+
 // Menu Indicator======================
 //======================================
 const navIndicatorContent = document.querySelector("#navigation-indicator p");
 const navIndicator = document.querySelector("#navigation-indicator");
 const navBullets = document.querySelectorAll(".nav-bullet");
 
+
+
 // Navigation indicator change text
 const navIndicatorChange = function (entries) {
   const [entry] = entries;
-  console.log(entry);
   if (entry.isIntersecting || (entry.isIntersecting && entry.isVisible)) {
     navIndicatorContent.innerHTML = entry.target.dataset.indicator
       ? entry.target.dataset.indicator
@@ -193,6 +196,7 @@ burger_icon.addEventListener("click", () => {
 nav_items.forEach((item) => item.addEventListener("click", toggleMenu));
 
 
+
 // Header hide  on scroll
 //========================================
 const header = document.querySelector(".header-content");
@@ -222,6 +226,7 @@ const hideHeader = (currentScroll) => {
 window.addEventListener("scroll", () => {
   hideHeader(window.pageYOffset);
 });
+
 
 // Circles following cursor =============
 //=======================================
@@ -292,7 +297,6 @@ cursorModifiers.forEach((curosrModifier) => {
 });
 
 document.querySelectorAll(".cursor-hover").forEach((el) => {
-  console.log("hi");
   el.addEventListener("mouseenter", growCursor);
   el.addEventListener("mouseleave", shrinkCursor);
 });

@@ -586,6 +586,7 @@
   }
 
   .img-credits, .img-credits a {
+    line-height: 1.5;
     font-style:italic;
       margin-top: 4rem;
       color:rgba(255, 255, 255, 0.548)
