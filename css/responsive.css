@@ -255,11 +255,11 @@
 
 @media (min-width: 90rem) {
   .header-title {
-    transform: translate(10%, -50%);
+    transform: translate(12%, -50%);
   }
   
   .hello-title {
-    transform: translateX(20vw);
+    transform: translateX(18vw);
   }
   
   .anim-outer-left {

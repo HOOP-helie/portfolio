@@ -23,14 +23,20 @@ const nav_link_letters = document.querySelectorAll(".nav-item-letter");
 const revealOpacity = function (entries, observer) {
   const [entry] = entries;
   if (entry.isIntersecting) {
-      entry.target.classList.add("reveal");
+    let delay = 0;
+    entry.target.querySelectorAll(".to-reveal-child").forEach((child) => {
+      setTimeout(() => {
+        child.classList.add("reveal");
+      }, delay);
+      delay += 50;
+    })
     observer.unobserve(entry.target);
   }
 };
 
 const opacityObserver = new IntersectionObserver(revealOpacity, {
   root: null,
-  threshold: 1,
+  threshold: 0.3,
 });
 
 const all_opacity = document.querySelectorAll(".to-reveal");
@@ -84,8 +90,8 @@ const headerTitle = document.querySelector(".header-title");
 const helloTitle = document.querySelector(".hello-title");
 const nameTitle = document.querySelector(".name-title");
 const subtitle = document.querySelector(".subtitle");
-const headerElementsReveal = document.querySelectorAll(".header-reveal");
-const burger = [burger_icon, menu_background];
+const headerElementsReveal = document.querySelectorAll(".header-to-reveal");
+
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     portfolioContent.style.visibility = "hidden";
@@ -108,8 +114,7 @@ document.onreadystatechange = function () {
       }, 4100);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
-          el.classList.add("header-reveal-end"));
-        burger.forEach(el => el.classList.add("burger-reveal"));
+          el.classList.add("header-reveal"));
       },5200);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>

@@ -14,15 +14,16 @@ body {
   position: relative;
 }
 
-.no-display {
-  display: none;
-}
 
 strong {
   font-weight: 700;
 }
 
-.to-reveal {
+.no-display {
+  display: none;
+}
+
+.to-reveal-child {
   transition: 1.5s;
   opacity: 0;
 }
@@ -41,29 +42,22 @@ strong {
   transform: translateY(0);
   opacity: 1;
 }
+
 /* ===================================== */
 /* ============= HEADER ================ */
 /* ===================================== */
-.header-reveal {
+.header-to-reveal {
   opacity: 0;
   transition: 0.8s;
 }
-.header-reveal-end {
+.header-reveal {
   opacity: 1;
 }
 
-@keyframes header-reveal-anim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 header {
   position: fixed;
   top: 0;
-  overflow-x: hidden;
 }
 
 #header-dummy {
@@ -82,7 +76,6 @@ header {
   position: relative;
   width: 100vw;
   height: 100vh;
-  opacity: 1;
 }
 
 .header-details {
@@ -122,8 +115,6 @@ header {
   line-height: 1.2;
   font-size: 5rem;
   font-size: clamp(2rem, 15vw, 6rem);
-  /* font-family: "Playfair Display", serif; */
-  /* font-weight: 500; */
   letter-spacing: 2px;
   transition: 0.8s;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -309,11 +300,10 @@ main {
   z-index: -1;
   transform: translateX(-50%);
   position: absolute;
-  /* background-color: blanchedalmond; */
   animation: pulse-float 2.5s infinite;
 }
 
-@media (max-width: 544px) {
+@media (max-width: 34rem) {
   .about-section1-img-box::after {
     width: 78%;
   }
