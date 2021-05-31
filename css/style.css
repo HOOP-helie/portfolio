@@ -93,7 +93,7 @@ header {
   color: rgba(255, 255, 255, 0.8);
   position: absolute;
   z-index: 100;
-  top: 50%;
+  top: 40%;
   width: 100%;
   padding-left: 12%;
   transform: translate(10%, -50%);
@@ -147,7 +147,7 @@ header {
 /* SVG CIRCLE SCROLL */
 /* ============================= */
 #circle-container {
-  bottom: 20%;
+  bottom: 30%;
   position: absolute;
   z-index: 100;
   width: 180px;

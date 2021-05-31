@@ -104,24 +104,24 @@ document.onreadystatechange = function () {
       }, 1200);
       setTimeout(() => {
         nameTitle.classList.add("anim-text-clip");
-      }, 1900);
+      }, 1700);
       setTimeout(() => {
         headerTitle.classList.add("anim-outer-left");
         helloTitle.classList.add("anim-inner-left");
-      }, 3200);
+      }, 2800);
       setTimeout(() => {
         subtitle.classList.add("subtitle-reveal");
-      }, 4100);
+      }, 3800);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
           el.classList.add("header-reveal"));
-      },5200);
+      },4500);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
           el.style.setProperty("transition", "none")
         );
         headerTitle.style.setProperty("transition", "none")
-      }, 5500);
+      }, 5000);
     }, 900);
    
   }
