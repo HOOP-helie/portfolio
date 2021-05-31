@@ -14,7 +14,6 @@ body {
   position: relative;
 }
 
-
 strong {
   font-weight: 700;
 }
@@ -32,10 +31,11 @@ strong {
   opacity: 1;
 }
 
-.to-slide-up, .to-slide-up2 {
+.to-slide-up,
+.to-slide-up2 {
   transform: translateY(30%);
   opacity: 0;
-  transition: 1.2s cubic-bezier(0.25, 0.2, 0.25, 1.0) ;
+  transition: 1.2s cubic-bezier(0.25, 0.2, 0.25, 1);
 }
 
 .slide-up {
@@ -53,7 +53,6 @@ strong {
 .header-reveal {
   opacity: 1;
 }
-
 
 header {
   position: fixed;
@@ -243,7 +242,7 @@ main {
 /* ==================================== */
 #about {
   width: 90%;
-
+  margin: auto;
 }
 .about-section1-img-box {
   border-radius: 50%;
