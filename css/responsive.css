@@ -50,13 +50,18 @@
     font-size: 4rem;
     animation: defile-anim 100s infinite linear;
   }
+
+  #course-section{
+    margin-top: 15rem ;
+  }
+
   #course-section .dates {
     font-size: 4rem;
   }
   #about,
   .course-subject {
     width: 82%;
-    margin: auto;
+    margin:  auto;
   }
   .about-section1 h3,
   .about-section2 h3 {
@@ -73,6 +78,9 @@
     width: 85%;
   }
 
+  #projects{
+    margin-top: 20rem;
+  }
   #projects h3 {
     font-size: 4rem;
     margin-top: 8rem;
@@ -188,7 +196,7 @@
     font-size: 1.2rem;
   }
   #course-section {
-    margin-top: 15rem;
+    margin-top: 20rem;
   }
   #course-section .current-course p:first-child {
     font-size: 2.6rem;
@@ -222,8 +230,9 @@
     display: block;
     width: 15%;
   }
+
   #projects{
-    margin-top: 15rem;
+    margin-top: 25rem;
   }
 
   #projects h3 {
