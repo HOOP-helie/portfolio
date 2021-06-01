@@ -100,28 +100,28 @@ document.onreadystatechange = function () {
       document.querySelector("body").classList.add("loaded");
       portfolioContent.style.visibility = "visible";
       setTimeout(() => {
-        helloTitle.classList.add("anim-text-clip");
+        helloTitle.classList.add("anim-text-clip-hello");
       }, 1200);
       setTimeout(() => {
-        nameTitle.classList.add("anim-text-clip");
-      }, 1700);
+        nameTitle.classList.add("anim-text-clip-name");
+      }, 1900);
       setTimeout(() => {
         headerTitle.classList.add("anim-outer-left");
         helloTitle.classList.add("anim-inner-left");
-      }, 2800);
+      }, 3200);
       setTimeout(() => {
         subtitle.classList.add("subtitle-reveal");
-      }, 3800);
+      }, 4200);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
           el.classList.add("header-reveal"));
-      },4500);
+      },5100);
       setTimeout(() => {
         headerElementsReveal.forEach((el) =>
           el.style.setProperty("transition", "none")
         );
         headerTitle.style.setProperty("transition", "none")
-      }, 5000);
+      }, 5400);
     }, 900);
    
   }

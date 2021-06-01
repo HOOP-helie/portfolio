@@ -104,10 +104,13 @@ header {
   font-size: 2rem;
   font-size: clamp(2rem, 8vw, 3rem);
   margin-bottom: 1rem;
-  transform: translateX(10vw);
+  transform: translate(10vw, 30%);
   transition: 1s;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  backface-visibility: hidden;
 }
+
+
 
 .name-title {
   color: rgba(255, 255, 255, 0.9);
@@ -116,7 +119,10 @@ header {
   font-size: clamp(2rem, 15vw, 6rem);
   letter-spacing: 2px;
   transition: 0.8s;
+  transform: translateY(30%);
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  backface-visibility: hidden;
+
 }
 
 .subtitle {
@@ -136,11 +142,18 @@ header {
   transform: translate(0%, -50%);
 }
 
-.anim-inner-left {
-  transform: translateX(0);
-}
-.anim-text-clip {
+.anim-text-clip-hello{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: translate(10vw,0);
+}
+
+.anim-inner-left {
+  transform: translate(0,0);
+}
+
+.anim-text-clip-name {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: translateY(0);
 }
 
 /* SVG CIRCLE SCROLL */
