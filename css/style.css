@@ -107,6 +107,8 @@ header {
   transform: translate(10vw, 30%);
   transition: 1s;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); */
+
   backface-visibility: hidden;
 }
 
@@ -121,6 +123,8 @@ header {
   transition: 0.8s;
   transform: translateY(30%);
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); */
   backface-visibility: hidden;
 
 }
