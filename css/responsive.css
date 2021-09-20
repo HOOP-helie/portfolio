@@ -103,16 +103,16 @@
     margin-bottom: 2rem;
   }
 
-  .project1-content .project-title {
+  .project-content .project-title {
     font-size: 1.8rem;
   }
 
-  .project1-content {
+  .project-content {
     font-size: 1.2rem;
     width: 70%;
   }
 
-  .project1-links {
+  .project-links {
     font-size: 1.8rem;
     margin-top: 2rem;
     text-align: left;
@@ -245,27 +245,40 @@
     font-size: 5rem;
   
   }
-  .project1 {
+  .project-container {
     display: flex;
-    width: 90%;
+    width: 80%;
     margin: auto;
-    max-width: 78rem;
+    max-width: 80rem;
   }
-  .project1-img {
+
+  .project-img {
     width: 40%;
   }
-  .project1-img .big-img {
+  .project-img .big-img {
     width: 100%;
   }
 
-  .project1-img .small-img {
+  .project-img .small-img {
     width: 75%;
     left: 50%;
   }
-  .project1-content {
+  .project-content {
     width: 60%;
     padding-left: 15%;
   }
+
+  .project-container:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  .project-container:nth-child(even) .project-content{
+    padding-left: 0;
+    padding-right: 15%;
+  }
+  .project-container:nth-child(even) .small-img{
+    left: -25%;
+  }
+
 }
 
 

@@ -511,12 +511,12 @@
   }
 
   .swiper-slide .challenge-links i,
-  .project1-links i {
+  .project-links i {
     transition: 0.2s;
   }
 
   .swiper-slide .challenge-links i:hover,
-  .project1-links i:hover {
+  .project-links i:hover {
     color: var(--primary-blue);
     transform: scale(1.2);
   }

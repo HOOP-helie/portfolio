@@ -582,17 +582,19 @@ main {
 /* ========================== */
 
 .back-subject .subject-content p:first-child {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   line-height: 1.5;
 }
 .back-end-logo {
   width: 6rem;
-  margin: 1rem auto;
+  margin:  auto;
 }
 
 .back-end-logo img {
   width: 100%;
 }
+
+
 
 /* OTHER SUBJECT */
 /* ========================== */
@@ -634,27 +636,30 @@ main {
   margin-bottom: 5rem;
 }
 
-.project1-img {
+.project-img {
   position: relative;
   margin: 6rem auto 2rem;
   width: 90%;
   max-width: 25rem;
 }
-.project1-img .big-img {
+
+.project-img .big-img {
   width: 15rem;
   position: relative;
-
   opacity: 0.9;
 }
-.project1-img .big-img img,
-.project1-img .small-img img {
+
+.project-img .big-img img,
+.project-img .small-img img {
   width: 100%;
   cursor: pointer;
+  border: 1px solid rgba(218, 218, 218, 0.527);
 }
-.project1-img .small-img img {
+
+.project-img .small-img img {
   border: 1px solid rgba(255, 255, 255, 0.527);
 }
-.project1-img .small-img {
+.project-img .small-img {
   position: absolute;
   width: 11rem;
   z-index: 3;
@@ -662,45 +667,50 @@ main {
   top: 40%;
 }
 
-.project1-content {
+.project-content {
   width: 90%;
   margin: auto;
   line-height: 1.5;
 }
 
-.project1-content .project-title {
+.project-content .project-title {
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 1rem;
   position: relative;
 }
 
-.project1-content .project-languages {
+.project-content .project-languages {
   font-weight: 500;
   font-style: italic;
   margin-bottom: 10px;
 }
 
-.project1-content .original-website {
+
+.project-content .project-details {
+  margin-bottom: 0.5rem;
+}
+
+.project-content .original-website {
   margin-top: 1rem;
   font-weight: 600;
 }
 
-.project1-content .original-website a {
+.project-content .original-website a {
   color: var(--secondary-purple);
   transition: 0.3s;
 }
 
-.project1-content .original-website a:hover {
+.project-content .original-website a:hover {
   color: var(--primary-blue-soft);
 }
 
-.project1-links {
+.project-links {
   margin-top: 1rem;
   font-size: 1.5rem;
   text-align: center;
 }
 
-.project1-links a + a {
+.project-links a + a {
   margin-left: 3rem;
 }

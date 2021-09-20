@@ -206,10 +206,8 @@ nav_items.forEach((item) => item.addEventListener("click", toggleMenu));
 //========================================
 const header = document.querySelector(".header-content");
 const footer = document.querySelector("footer");
-const project1 = document.querySelector(".project1");
 const checkpoint = 800;
-const checkpointFooter =
-  project1.getBoundingClientRect().top + document.documentElement.scrollTop;
+
 let opacityHeader = 1;
 
 const hideHeader = (currentScroll) => {
