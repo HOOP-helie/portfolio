@@ -390,10 +390,11 @@
   }
 
   .swiper-container {
-    max-width: 1200px;
+    /* max-width: 98rem; */
     height: 27rem;
     padding: 0 2rem 3rem;
-
+    position: relative;
+    overflow: hidden;
     cursor: grab;
   }
 
