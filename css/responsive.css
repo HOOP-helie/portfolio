@@ -1,24 +1,22 @@
 @media (min-width: 46rem) {
-  
   .header-title {
     transform: translate(5%, -50%);
   }
-  
+
   .hello-title {
-    transform: translate(20vw,30%);
+    transform: translate(20vw, 30%);
   }
 
-   .anim-text-clip-hello{
+  .anim-text-clip-hello {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transform: translate(20vw,0);
+    transform: translate(20vw, 0);
   }
   .anim-outer-left {
     transform: translate(0%, -50%);
   }
 
- 
   .anim-inner-left {
-  transform: translate(0,0);
+    transform: translate(0, 0);
   }
 
   .header-details {
@@ -57,8 +55,8 @@
     animation: defile-anim 100s infinite linear;
   }
 
-  #course-section{
-    margin-top: 15rem ;
+  #course-section {
+    margin-top: 15rem;
   }
 
   #course-section .dates {
@@ -67,7 +65,7 @@
   #about,
   .course-subject {
     width: 82%;
-    margin:  auto;
+    margin: auto;
   }
   .about-section1 h3,
   .about-section2 h3 {
@@ -81,17 +79,16 @@
   }
 
   .swiper-container {
-    width: 85%;
+    width: 90%;
   }
 
-  #projects{
+  #projects {
     margin-top: 20rem;
   }
   #projects h3 {
     font-size: 4rem;
     margin-top: 8rem;
     margin-bottom: 6rem;
-
   }
   .slider-title p:first-child {
     font-size: 1.8rem;
@@ -117,8 +114,9 @@
     margin-top: 2rem;
     text-align: left;
   }
-
- 
+  .small-text {
+    font-size: 1rem;
+  }
   #course-section .current-course p:first-child {
     font-size: 2.3rem;
   }
@@ -143,7 +141,6 @@
 } */
 
 @media (min-width: 70rem) {
-
   .about-section1 {
     display: flex;
     align-items: center;
@@ -231,24 +228,22 @@
     margin-top: 1rem;
   }
 
-
   .empty-subject {
     display: block;
     width: 20%;
   }
 
-  #projects{
+  #projects {
     margin-top: 25rem;
   }
 
   #projects h3 {
     font-size: 5rem;
-  
   }
   .project-container {
     display: flex;
     width: 80%;
-    margin: auto;
+    margin: 5rem auto;
     max-width: 80rem;
   }
 
@@ -268,38 +263,35 @@
     padding-left: 15%;
   }
 
-  .project-container:nth-child(even){
+  .project-container:nth-child(even) {
     flex-direction: row-reverse;
   }
-  .project-container:nth-child(even) .project-content{
+  .project-container:nth-child(even) .project-content {
     padding-left: 0;
     padding-right: 15%;
   }
-  .project-container:nth-child(even) .small-img{
+  .project-container:nth-child(even) .small-img {
     left: -25%;
   }
-
 }
-
 
 @media (min-width: 90rem) {
   .header-title {
     transform: translate(12%, -50%);
   }
-  
+
   .hello-title {
-    transform: translate(18vw , 30%);
+    transform: translate(18vw, 30%);
   }
-  
+
   .anim-outer-left {
     transform: translate(0%, -50%);
   }
-  .anim-text-clip-hello{
+  .anim-text-clip-hello {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transform: translate(18vw ,0);
+    transform: translate(18vw, 0);
   }
   .anim-inner-left {
-    transform: translate(0,0);
-
+    transform: translate(0, 0);
   }
 }
